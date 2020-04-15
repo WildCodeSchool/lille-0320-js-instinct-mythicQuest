@@ -10,11 +10,26 @@ const AboutPage = () => {
         Voici les membres de Instinct Agency :
       </p>
       <ul className="name_list">
-        <li>Malika BADAOUI</li>
-        <li>Margaux BEDU</li>
-        <li>Aurélien BADRE</li>
-        <li>Maxime RAWINSKI</li>
-        <li>Sylvain CARLIER</li>
+        <li>
+          Malika BADAOUI
+          <div className="malika_avatar image"></div>
+        </li>
+        <li>
+          Margaux BEDU
+          <div className="margaux_avatar image"></div>
+        </li>
+        <li>
+          Aurélien BADRE
+          <div className="aurélien_avatar image"></div>
+        </li>
+        <li>
+          Maxime RAWINSKI
+          <div className="maxime_avatar image"></div>
+        </li>
+        <li>
+          Sylvain CARLIER
+          <div className="sylvain_avatar image"></div>
+        </li>
       </ul>
     </div>
   );
