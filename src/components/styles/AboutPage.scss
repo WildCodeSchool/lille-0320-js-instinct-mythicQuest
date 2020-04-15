@@ -1,7 +1,7 @@
 .about {
   background: no-repeat center/120% url("/AboutPageBackground.jpg");
   width: 100vw;
-  height: 100vh;
+  height: 90vh;
   display: flex;
   flex-flow: column wrap;
   align-content: center;
@@ -16,14 +16,17 @@ p {
   box-shadow: 5px 5px 8px black;
   margin-top: 50px;
   line-height: 2rem;
+  font-family: "Montserrat", sans-serif;
 }
 
 .name_list {
   list-style-type: none;
   display: flex;
+  margin: 30px;
 }
 
 li {
+  font-family: "Cinzel Decorative", cursive;
   display: flex;
   flex-flow: column wrap;
   font-weight: bold;
@@ -40,6 +43,7 @@ li {
   width: 150px;
   height: 200px;
   margin-top: 20px;
+  border-radius: 5px;
 }
 
 .malika_avatar {
