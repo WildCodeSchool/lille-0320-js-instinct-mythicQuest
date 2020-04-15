@@ -1,0 +1,30 @@
+
+.footer {
+    height            : 100px;
+    background-color  : black;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.footer p {
+    color: white;
+    margin-left: 40px;
+}
+
+.footer p span {
+    color:#8edf37;
+}
+
+.social-network {
+    margin-right: 40px;
+}
+
+.footer img {
+    width: 40px;
+    margin-left: 15px;
+}
+
+.footer img:hover{
+   opacity: 85%;
+}
