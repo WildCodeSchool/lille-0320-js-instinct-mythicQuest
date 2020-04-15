@@ -1,5 +1,5 @@
 .homepage-header {
-  background: no-repeat center/100% url("/forest.jpg");
+  background: no-repeat center/100% url("/img/forest.jpg");
   height: 100vh;
 }
 
@@ -18,6 +18,8 @@
 }
 
 .homepage-header h1 .first-word {
+  display: flex;
+  flex-direction: column;
   color: #86ffd7;
   text-shadow: 10px 10px 2px rgba(0, 0, 0, 0.92);
 }
