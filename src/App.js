@@ -1,11 +1,10 @@
 import React from "react";
-import Wilder from "./components/Wilder";
+import AboutPage from "./components/AboutPage";
 
 function App() {
   return (
     <div className="App">
-      <h1>Hi there !</h1>
-      <Wilder />
+      <AboutPage />
     </div>
   );
 }
