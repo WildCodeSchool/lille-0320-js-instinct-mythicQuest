@@ -5,9 +5,8 @@ const AboutPage = () => {
   return (
     <div className="about">
       <p>
-        Projet réalisé dans le cadre de la formation à la WildCodeSchool.
-        <br></br>
-        Voici les membres de Instinct Agency :
+        Project developed during the WildCodeSchool training. <br></br>
+        Here are the members of Instinct Agency:
       </p>
       <ul className="name_list">
         <li>
