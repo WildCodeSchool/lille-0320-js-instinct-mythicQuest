@@ -24,6 +24,8 @@ p {
 }
 
 li {
+  display: flex;
+  flex-flow: column wrap;
   font-weight: bold;
   border-radius: 5px;
   margin: 20px;
@@ -32,4 +34,30 @@ li {
   background-color: rgba(134, 255, 215, 0.45);
   padding: 15px;
   box-shadow: 5px 5px 8px black;
+}
+
+.image {
+  width: 150px;
+  height: 200px;
+  margin-top: 20px;
+}
+
+.malika_avatar {
+  background: no-repeat center/100% url("/malika_avatar.jpg");
+}
+
+.margaux_avatar {
+  background: no-repeat center/100% url("/margaux_avatar.jpg");
+}
+
+.maxime_avatar {
+  background: no-repeat center/100% url("/maxime_avatar.jpg");
+}
+
+.aurélien_avatar {
+  background: no-repeat center/100% url("/aurélien_avatar.jpg");
+}
+
+.sylvain_avatar {
+  background: no-repeat center/100% url("/sylvain_avatar.jpg");
 }
