@@ -1,7 +1,7 @@
 
 .footer {
-    height            : 100px;
-    background-color  : black;
+    height: 100px;
+    background-color: black;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -13,7 +13,7 @@
 }
 
 .footer p span {
-    color:#8edf37;
+    color: #8edf37;
 }
 
 .social-network {
