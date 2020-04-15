@@ -6,6 +6,8 @@ const AboutPage = () => {
     <div className="about">
       <p>
         Projet réalisé dans le cadre de la formation à la WildCodeSchool.
+        <br></br>
+        Voici les membres de Instinct Agency :
       </p>
       <ul className="name_list">
         <li>Malika BADAOUI</li>
