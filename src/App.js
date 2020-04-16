@@ -1,5 +1,5 @@
 import React from "react";
-import AboutPage from "./components/AboutPage";
+import AboutPage from "./components/AboutPage/AboutPage";
 
 function App() {
   return (
