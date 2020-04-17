@@ -1,5 +1,5 @@
 import React from "react";
-import "./Header.css";
+import "./Header.scss";
 import Startbutton from "../share/Startbutton";
 import Nav from "../share/Nav";
 

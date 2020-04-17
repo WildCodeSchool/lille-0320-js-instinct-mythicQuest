@@ -1,5 +1,5 @@
 import React from "react";
-import "./Startbutton.css";
+import "./Startbutton.scss";
 
 class Startbutton extends React.Component {
   constructor(props) {
