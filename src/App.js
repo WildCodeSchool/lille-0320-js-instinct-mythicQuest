@@ -1,6 +1,6 @@
 import React from "react";
-import Footer from "./components/Footer";
-import Howtoplay from "./components/Howtoplay";
+import Footer from "./components/Footer/Footer";
+import Howtoplay from "./components/HowToPlay/Howtoplay";
 
 function App() {
   return (

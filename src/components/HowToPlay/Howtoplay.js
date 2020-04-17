@@ -1,5 +1,5 @@
-import React from "react";
-import "./Howtoplay.css";
+import React from 'react';
+import "./Howtoplay.scss";
 
 const Howtoplay = () => {
   return (
