@@ -1,0 +1,50 @@
+.homepage-header {
+  background: no-repeat center/100% url("/images/forest.jpg");
+  height: 100vh;
+}
+
+.container-content {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.homepage-header h1 {
+  font-family: "Cinzel Decorative", cursive;
+  font-size: 10em;
+  text-align: center;
+  line-height: 0.9em;
+}
+
+.homepage-header h1 .first-word {
+  display: flex;
+  flex-direction: column;
+  color: #86ffd7;
+  text-shadow: 10px 10px 2px rgba(0, 0, 0, 0.92);
+}
+
+.homepage-header h1 .second-word {
+  color: #8edf37;
+  text-shadow: 10px 10px 2px rgba(0, 0, 0, 0.92);
+}
+
+.start-container {
+  display: flex;
+  flex-direction: column;
+  width: 18%;
+  margin: 50px auto;
+}
+
+.username {
+  padding: 15px 0;
+  background: transparent;
+  border: 2px solid #8edf37;
+  border-radius: 5px;
+  text-align: center;
+  color: white;
+}
+
+.username::placeholder {
+  color: white;
+}
