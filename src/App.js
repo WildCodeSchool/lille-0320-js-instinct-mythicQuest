@@ -1,16 +1,12 @@
 import React from "react";
 import Footer from "./components/Footer";
-import Howtoplay from "./components/HowToPlay/Howtoplay";
+import Howtoplay from "./components/Howtoplay";
 
 function App() {
   return (
     <div className="App">
-      <main>
-        <Howtoplay />
-      </main>
-      <footer>
-        <Footer />
-      </footer>
+      <Howtoplay />
+      <Footer />
     </div>
   );
 }
