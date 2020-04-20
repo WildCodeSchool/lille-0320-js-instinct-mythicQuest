@@ -1,4 +1,5 @@
 import React from "react";
+import Footer from "./components/Footer/Footer";
 import Header from "./components/header/Header";
 import "./App.scss";
 import Howtoplay from "./components/HowToPlay/Howtoplay";
@@ -8,6 +9,7 @@ function App() {
     <div className="App">
       <Header />
       <Howtoplay />
+      <Footer />
     </div>
   );
 }
