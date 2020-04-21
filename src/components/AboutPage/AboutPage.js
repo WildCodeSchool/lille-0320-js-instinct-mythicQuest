@@ -4,32 +4,33 @@ import "./AboutPage.scss";
 const AboutPage = () => {
   return (
     <div className="about">
-      <p>
+      <h2>About us</h2>
+      <p className="introduction">
         Project developed during the WildCodeSchool training. <br></br>
         Here are the members of Instinct Agency:
       </p>
-      <ul className="name_list">
-        <li>
-          Malika BADAOUI
-          <div className="malika_avatar image"></div>
-        </li>
-        <li>
-          Margaux BEDU
-          <div className="margaux_avatar image"></div>
-        </li>
-        <li>
-          Aurélien BADRE
-          <div className="aurélien_avatar image"></div>
-        </li>
-        <li>
-          Maxime RAWINSKI
-          <div className="maxime_avatar image"></div>
-        </li>
-        <li>
-          Sylvain CARLIER
-          <div className="sylvain_avatar image"></div>
-        </li>
-      </ul>
+      <div className="character-container">
+        <div className="character-bloc">
+          <img src="images/malika-avatar.png" alt="Malika Avatar" />
+          <p>Malika</p>
+        </div>
+        <div className="character-bloc">
+          <img src="images/margaux-avatar.png" alt="Margaux Avatar" />
+          <p>Margaux</p>
+        </div>
+        <div className="character-bloc">
+          <img src="images/aurelien-avatar.png" alt="Aurélien Avatar" />
+          <p>Aurélien</p>
+        </div>
+        <div className="character-bloc">
+          <img src="images/maxime-avatar.png" alt="Maxime Avatar" />
+          <p>Maxime</p>
+        </div>
+        <div className="character-bloc">
+          <img src="images/sylvain-avatar.png" alt="Sylvain Avatar" />
+          <p>Sylvain</p>
+        </div>
+      </div>
     </div>
   );
 };

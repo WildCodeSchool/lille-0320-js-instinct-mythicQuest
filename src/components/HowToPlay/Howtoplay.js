@@ -19,7 +19,7 @@ const HowToPlay = () => {
             <h3>
               <span>1</span> Use the arrows keys to move your character.
             </h3>
-            <img src="arrow-keys.png" alt="arrow-keys"></img>
+            <img src="images/arrow-keys.png" alt="arrow-keys"></img>
           </div>
           <div>
             <h3>
