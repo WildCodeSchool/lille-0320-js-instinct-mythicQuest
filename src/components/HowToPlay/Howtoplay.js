@@ -7,7 +7,12 @@ const HowToPlay = () => {
       <h2>How to play ?</h2>
       <div className="tutorial-container">
         <div className="left-section">
-          <img className="imagevideo" src="imagevideo.png" alt=""></img>
+          <iframe
+            width="450"
+            height="350"
+            src="https://www.youtube.com/embed/eYNCCu0y-Is"
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+          ></iframe>
         </div>
         <div className="right-section">
           <div>
