@@ -8,6 +8,7 @@ const HowToPlay = () => {
       <div className="tutorial-container">
         <div className="left-section">
           <iframe
+            title="Tutorial video to learn how to play"
             width="450"
             height="350"
             src="https://www.youtube.com/embed/eYNCCu0y-Is"
