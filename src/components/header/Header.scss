@@ -11,22 +11,21 @@
 }
 
 .homepage-header h1 {
+  display: flex;
+  flex-direction: column;
   font-family: "Cinzel Decorative", cursive;
-  font-size: 10em;
+  font-size: 9em;
   text-align: center;
   line-height: 0.9em;
+  text-shadow: 6px 6px 3px rgba(0, 0, 0, 1);
 }
 
 .homepage-header h1 .first-word {
-  display: flex;
-  flex-direction: column;
   color: #86ffd7;
-  text-shadow: 10px 10px 2px rgba(0, 0, 0, 0.92);
 }
 
 .homepage-header h1 .second-word {
-  color: #8edf37;
-  text-shadow: 10px 10px 2px rgba(0, 0, 0, 0.92);
+  color: #9aff2d;
 }
 
 .start-container {
@@ -43,6 +42,7 @@
   border-radius: 5px;
   text-align: center;
   color: white;
+  outline-color: #8edf37;
 }
 
 .username::placeholder {
