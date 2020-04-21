@@ -1,7 +1,7 @@
 import React from "react";
-import "./Howtoplay.scss";
+import "./HowToPlay.scss";
 
-const Howtoplay = () => {
+const HowToPlay = () => {
   return (
     <section className="tutorial">
       <h2>How to play ?</h2>
@@ -42,4 +42,4 @@ const Howtoplay = () => {
   );
 };
 
-export default Howtoplay;
+export default HowToPlay;

@@ -1,7 +1,7 @@
 import React from "react";
-import "./Startbutton.scss";
+import "./StartButton.scss";
 
-class Startbutton extends React.Component {
+class StartButton extends React.Component {
   constructor(props) {
     super(props);
   }
@@ -10,4 +10,4 @@ class Startbutton extends React.Component {
   }
 }
 
-export default Startbutton;
+export default StartButton;

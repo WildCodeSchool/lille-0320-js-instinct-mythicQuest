@@ -7,7 +7,7 @@
   align-content: center;
 }
 
-p {
+.about p {
   padding: 20px;
   font-size: 22px;
   background-color: rgba(142, 223, 55, 0.5);
@@ -25,7 +25,7 @@ p {
   margin: 30px;
 }
 
-li {
+.about li {
   font-family: "Cinzel Decorative", cursive;
   display: flex;
   flex-flow: column wrap;

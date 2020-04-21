@@ -1,7 +1,7 @@
 import React from "react";
-import "./Header.scss";
-import Startbutton from "../share/Startbutton";
 import Nav from "../share/Nav";
+import StartButton from "../share/StartButton";
+import "./Header.scss";
 
 class Header extends React.Component {
   constructor(props) {
@@ -18,7 +18,7 @@ class Header extends React.Component {
           </h1>
           <form className="start-container">
             <input className="username" type="text" placeholder="USERNAME" />
-            <Startbutton />
+            <StartButton />
           </form>
         </div>
       </header>
