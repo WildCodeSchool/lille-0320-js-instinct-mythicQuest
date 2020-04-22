@@ -1,8 +1,8 @@
 import React from "react";
 import AboutPage from "../AboutPage/AboutPage";
+import Footer from "../Footer/Footer";
 import Header from "../Header/Header";
 import HowToPlay from "../HowToPlay/HowToPlay";
-import Footer from "../Footer/Footer";
 import "./HomePage.scss";
 
 const HomePage = () => {

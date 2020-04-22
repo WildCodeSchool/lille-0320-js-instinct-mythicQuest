@@ -1,6 +1,6 @@
 import React from "react";
-import Nav from "../share/Nav";
 import Form from "../Form/Form";
+import Nav from "../Share/Nav";
 import "./Header.scss";
 
 const Header = () => {
