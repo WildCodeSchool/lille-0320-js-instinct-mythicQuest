@@ -1,0 +1,56 @@
+.start-container {
+  display: flex;
+  flex-direction: column;
+  width: 18%;
+  margin: 50px auto;
+}
+
+.username {
+  padding: 15px 0;
+  background: transparent;
+  border: 2px solid #8edf37;
+  border-radius: 5px;
+  text-align: center;
+  color: white;
+}
+
+.username::placeholder {
+  color: white;
+}
+
+.button-start {
+  padding: 8px 0;
+  text-transform: uppercase;
+  background: linear-gradient(
+    17deg,
+    rgba(97, 246, 39, 1) 0%,
+    rgba(175, 251, 131, 1) 100%
+  );
+  border: none;
+  border-radius: 5px;
+  margin-top: 10px;
+  color: white;
+  font-size: 1.5em;
+  font-family: "arial";
+  font-weight: bold;
+  text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.92);
+}
+
+.button-start-disabled {
+  padding: 8px 0;
+  text-transform: uppercase;
+  background: linear-gradient(
+    17deg,
+    rgba(97, 246, 39, 1) 0%,
+    rgba(175, 251, 131, 1) 100%
+  );
+  border: none;
+  border-radius: 5px;
+  margin-top: 10px;
+  color: white;
+  font-size: 1.5em;
+  font-family: "arial";
+  font-weight: bold;
+  text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.92);
+  opacity: 60%;
+}

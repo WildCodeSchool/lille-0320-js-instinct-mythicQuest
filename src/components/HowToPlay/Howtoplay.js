@@ -1,20 +1,26 @@
 import React from "react";
-import "./Howtoplay.scss";
+import "./HowToPlay.scss";
 
-const Howtoplay = () => {
+const HowToPlay = () => {
   return (
     <section className="tutorial">
       <h2>How to play ?</h2>
       <div className="tutorial-container">
         <div className="left-section">
-          <img className="imagevideo" src="imagevideo.png" alt=""></img>
+          <iframe
+            title="Tutorial video to learn how to play"
+            width="450"
+            height="350"
+            src="https://www.youtube.com/embed/eYNCCu0y-Is"
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+          ></iframe>
         </div>
         <div className="right-section">
           <div>
             <h3>
               <span>1</span> Use the arrows keys to move your character.
             </h3>
-            <img src="arrow-keys.png" alt="arrow-keys"></img>
+            <img src="images/arrow-keys.png" alt="arrow-keys"></img>
           </div>
           <div>
             <h3>
@@ -42,4 +48,4 @@ const Howtoplay = () => {
   );
 };
 
-export default Howtoplay;
+export default HowToPlay;

@@ -1,67 +1,54 @@
 .about {
-  background: no-repeat center/120% url("/AboutPageBackground.jpg");
-  width: 100vw;
-  height: 90vh;
+  background: no-repeat center/100% url("/images/AboutPageBackground.jpg");
+  height: 100vh;
   display: flex;
-  flex-flow: column wrap;
-  align-content: center;
-}
-
-p {
-  padding: 20px;
-  font-size: 22px;
-  background-color: rgba(142, 223, 55, 0.5);
-  text-align: center;
-  border-radius: 5px;
-  box-shadow: 5px 5px 8px black;
-  margin-top: 50px;
-  line-height: 2rem;
-  font-family: "Montserrat", sans-serif;
-}
-
-.name_list {
-  list-style-type: none;
-  display: flex;
-  margin: 30px;
-}
-
-li {
-  font-family: "Cinzel Decorative", cursive;
-  display: flex;
-  flex-flow: column wrap;
-  font-weight: bold;
-  border-radius: 5px;
-  margin: 20px;
-  text-align: center;
+  flex-direction: column;
   align-items: center;
-  background-color: rgba(134, 255, 215, 0.45);
-  padding: 15px;
-  box-shadow: 5px 5px 8px black;
 }
 
-.image {
-  width: 150px;
-  height: 200px;
-  margin-top: 20px;
-  border-radius: 5px;
+.about h2 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-top: 50px;
+  font-size: 1.5em;
+  color: white;
 }
 
-.malika_avatar {
-  background: no-repeat center/100% url("/malika_avatar.jpg");
+.introduction {
+  font-family: "Montserrat", sans-serif;
+  font-style: italic;
+  font-size: 22px;
+  text-align: center;
+  line-height: 1.5rem;
+  color: white;
+  margin: 45px 0 55px 0;
 }
 
-.margaux_avatar {
-  background: no-repeat center/100% url("/margaux_avatar.jpg");
+.character-container {
+  display: flex;
+  width: 90%;
 }
 
-.maxime_avatar {
-  background: no-repeat center/100% url("/maxime_avatar.jpg");
+.character-bloc {
+  text-align: center;
+  margin: 0 10px;
 }
 
-.aurélien_avatar {
-  background: no-repeat center/100% url("/aurélien_avatar.jpg");
+.about img {
+  width: 100%;
+  margin-bottom: 10px;
 }
 
-.sylvain_avatar {
-  background: no-repeat center/100% url("/sylvain_avatar.jpg");
+.character-container p {
+  background: linear-gradient(
+    17deg,
+    rgba(97, 246, 39, 1) 19%,
+    rgba(175, 251, 131, 1) 100%
+  );
+  padding: 10px 0;
+  text-transform: uppercase;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  opacity: 80%;
 }
