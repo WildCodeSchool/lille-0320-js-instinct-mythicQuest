@@ -12,23 +12,23 @@ const AboutPage = () => {
       <div className="character-container">
         <div className="character-bloc">
           <img src="images/malika-avatar.png" alt="Malika Avatar" />
-          <p>Malika</p>
+          <a href="https://github.com/MalikaBadaoui">Malika</a>
         </div>
         <div className="character-bloc">
           <img src="images/margaux-avatar.png" alt="Margaux Avatar" />
-          <p>Margaux</p>
+          <a href="https://github.com/magb7">Margaux</a>
         </div>
         <div className="character-bloc">
           <img src="images/aurelien-avatar.png" alt="Aurélien Avatar" />
-          <p>Aurélien</p>
+          <a href="https://github.com/Aurelien-Bdr">Aurélien</a>
         </div>
         <div className="character-bloc">
           <img src="images/maxime-avatar.png" alt="Maxime Avatar" />
-          <p>Maxime</p>
+          <a href="https://github.com/MaximePikss">Maxime</a>
         </div>
         <div className="character-bloc">
           <img src="images/sylvain-avatar.png" alt="Sylvain Avatar" />
-          <p>Sylvain</p>
+          <a href="https://github.com/XSylvainX">Sylvain</a>
         </div>
       </div>
     </div>
