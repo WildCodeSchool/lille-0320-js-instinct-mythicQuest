@@ -46,7 +46,7 @@ class Game extends Component {
         });
         break;
       default:
-        return "Invalid Direction";
+        return;
     }
   };
 
