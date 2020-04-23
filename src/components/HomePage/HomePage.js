@@ -4,6 +4,7 @@ import Footer from "../Footer/Footer";
 import Header from "../Header/Header";
 import HowToPlay from "../HowToPlay/HowToPlay";
 import "./HomePage.scss";
+import ScrollToTopButton from "../Share/ScrollToTopButton";
 
 const HomePage = () => {
   return (
@@ -12,6 +13,7 @@ const HomePage = () => {
       <HowToPlay />
       <AboutPage />
       <Footer />
+      <ScrollToTopButton />
     </div>
   );
 };
