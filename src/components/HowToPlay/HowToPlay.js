@@ -3,7 +3,7 @@ import "./HowToPlay.scss";
 
 const HowToPlay = () => {
   return (
-    <section className="tutorial">
+    <section className="tutorial" id="howtoplay">
       <h2>How to play ?</h2>
       <div className="tutorial-container">
         <div className="left-section">
