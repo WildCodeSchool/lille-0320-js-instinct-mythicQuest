@@ -17,8 +17,6 @@ class Game extends Component {
     document.onkeydown = this.onKeyDown;
   }
 
-  componentDidUpdate() {}
-
   // Fonction pour écouter les évènement sur le clavier
   onKeyDown = (e) => {
     const oldPosition = this.state.position;
