@@ -19,6 +19,7 @@ class Game extends Component {
 
   // Fonction pour écouter les évènement sur le clavier
   onKeyDown = (e) => {
+    e.preventDefault();
     const oldPosition = this.state.position;
     switch (e.keyCode) {
       case 38:
