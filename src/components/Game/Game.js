@@ -46,7 +46,7 @@ class Game extends Component {
         this.setState({
           direction: "RIGHT",
           position: [oldPosition[0] + sprite_size, oldPosition[1]],
-          spriteLocation: "Opx 40px",
+          spriteLocation: `Opx ${sprite_size}px`,
         });
         break;
       default:

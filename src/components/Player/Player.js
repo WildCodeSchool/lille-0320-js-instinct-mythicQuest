@@ -18,8 +18,8 @@ class Player extends Component {
           top: this.props.position[1], // top est sur l'axe y
           left: this.props.position[0], // left est sur l'axe x
           backgroundImage: `url(${this.state.sprite})`,
-          backgroundPosition: `${this.props.spriteLocation}`,
-          // transition: "0.3s",
+          backgroundPosition: this.props.spriteLocation,
+          transition: "0.3s",
           width: "40px",
           height: "40px",
         }}
