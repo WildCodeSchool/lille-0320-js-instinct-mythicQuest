@@ -6,45 +6,41 @@ class Player extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      direction: "DOWN",
-      walkIndex: 0,
       spriteLocationX: "0px",
       spriteLocationY: "0px",
     };
   }
 
-  componentDidUpdate() {}
+  componentDidUpdate(prevProps) {
+    if (prevProps.direction !== this.props.direction) {
+      this.getSpriteLocation();
+    }
+  }
 
   getSpriteLocation = () => {
-    if (this.props.direction !== this.state.direction) {
-      switch (this.props.direction) {
-        case "UP":
-          this.setState({
-            spriteLocationY: `${sprite_size * 3}`,
-            // spriteLocationX: `${sprite_size * walkIndex}`,
-          });
-          break;
-        case "DOWN":
-          this.setState({
-            spriteLocationY: `${sprite_size * 0}`,
-            // spriteLocationX: `${sprite_size * walkIndex}`,
-          });
-          break;
-        case "LEFT":
-          this.setState({
-            spriteLocationY: `${sprite_size * 2}`,
-            // spriteLocationX: `${sprite_size * walkIndex}`,
-          });
-          break;
-        case "RIGHT":
-          this.setState({
-            spriteLocationY: `${sprite_size * 1}`,
-            // spriteLocationX: `${sprite_size * walkIndex}`,
-          });
-          break;
-        default:
-          return;
-      }
+    switch (this.props.direction) {
+      case "UP":
+        this.setState({
+          spriteLocationY: `${sprite_size * 3}`,
+        });
+        break;
+      case "DOWN":
+        this.setState({
+          spriteLocationY: `${sprite_size * 0}`,
+        });
+        break;
+      case "LEFT":
+        this.setState({
+          spriteLocationY: `${sprite_size * 2}`,
+        });
+        break;
+      case "RIGHT":
+        this.setState({
+          spriteLocationY: `${sprite_size * 1}`,
+        });
+        break;
+      default:
+        return;
     }
   };
 
@@ -54,8 +50,8 @@ class Player extends Component {
         className="player"
         style={{
           position: "relative",
-          top: this.props.position[1], // top est sur l'axe y
-          left: this.props.position[0], // left est sur l'axe x
+          top: this.props.positionY,
+          left: this.props.positionX,
           backgroundImage: `url(${sprite_source})`,
           backgroundPositionX: `${this.state.spriteLocationX}px`,
           backgroundPositionY: `${this.state.spriteLocationY}px`,
