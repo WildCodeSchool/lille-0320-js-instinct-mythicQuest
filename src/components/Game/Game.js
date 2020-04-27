@@ -6,7 +6,6 @@ import { sprite_size } from "../Constants/Constants";
 const initialState = {
   direction: "DOWN",
   position: [0, 0],
-  spriteLocation: "0px 0px",
 };
 
 class Game extends Component {
@@ -23,30 +22,30 @@ class Game extends Component {
   onKeyDown = (e) => {
     e.preventDefault();
     const oldPosition = this.state.position;
-    switch (e.keyCode) {
-      case 38:
+    const direction = e.code.replace("Arrow", "").toUpperCase();
+    switch (direction) {
+      case "UP":
         this.setState({
-          direction: "UP",
+          direction,
           position: [oldPosition[0], oldPosition[1] - sprite_size],
         });
         break;
-      case 40:
+      case "DOWN":
         this.setState({
-          direction: "DOWN",
+          direction,
           position: [oldPosition[0], oldPosition[1] + sprite_size],
         });
         break;
-      case 37:
+      case "LEFT":
         this.setState({
-          direction: "LEFT",
+          direction,
           position: [oldPosition[0] - sprite_size, oldPosition[1]],
         });
         break;
-      case 39:
+      case "RIGHT":
         this.setState({
-          direction: "RIGHT",
+          direction,
           position: [oldPosition[0] + sprite_size, oldPosition[1]],
-          spriteLocation: `Opx ${sprite_size}px`,
         });
         break;
       default:
@@ -54,26 +53,17 @@ class Game extends Component {
     }
   };
 
-  //Function to shift the position of the character
-
-  // ShiftPosition = () => {
-  //   switch (this.state.direction) {
-  //     case "RIGHT":
-  //       console.log(this.state.spriteLocation);
-  //       this.setState({
-  //         spriteLocation: "Opx 40px",
-  //       });
-  //       break;
-  //     case "LEFT":
-  //       break;
-  //     case "UP":
-  //       break;
-  //     case "DOWN":
-  //       break;
-  //     default:
-  //       return;
-  //   }
-  // };
+  getWalkIndex = (walkIndex) => {
+    if (walkIndex >= 7) {
+      return this.setState({
+        walkIndex: 0,
+      });
+    } else {
+      return this.setState({
+        walkIndex: walkIndex + 1,
+      });
+    }
+  };
 
   render() {
     return (
@@ -81,7 +71,6 @@ class Game extends Component {
         <Player
           position={this.state.position}
           direction={this.state.direction}
-          spriteLocation={this.state.spriteLocation}
         />
       </div>
     );
