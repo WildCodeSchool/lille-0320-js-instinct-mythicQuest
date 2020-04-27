@@ -5,7 +5,8 @@ import { sprite_size } from "../Constants/Constants";
 
 const initialState = {
   direction: "DOWN",
-  position: [0, 0],
+  positionX: 0,
+  positionY: 0,
 };
 
 class Game extends Component {
@@ -21,31 +22,32 @@ class Game extends Component {
   // Event Listener when pressing arrow keys and moving character accordingly
   onKeyDown = (e) => {
     e.preventDefault();
-    const oldPosition = this.state.position;
+    const oldPositionX = this.state.positionX;
+    const oldPositionY = this.state.positionY;
     const direction = e.code.replace("Arrow", "").toUpperCase();
     switch (direction) {
       case "UP":
         this.setState({
           direction,
-          position: [oldPosition[0], oldPosition[1] - sprite_size],
+          positionY: oldPositionY - sprite_size,
         });
         break;
       case "DOWN":
         this.setState({
           direction,
-          position: [oldPosition[0], oldPosition[1] + sprite_size],
+          positionY: oldPositionY + sprite_size,
         });
         break;
       case "LEFT":
         this.setState({
           direction,
-          position: [oldPosition[0] - sprite_size, oldPosition[1]],
+          positionX: oldPositionX - sprite_size,
         });
         break;
       case "RIGHT":
         this.setState({
           direction,
-          position: [oldPosition[0] + sprite_size, oldPosition[1]],
+          positionX: oldPositionX + sprite_size,
         });
         break;
       default:
@@ -53,23 +55,12 @@ class Game extends Component {
     }
   };
 
-  getWalkIndex = (walkIndex) => {
-    if (walkIndex >= 7) {
-      return this.setState({
-        walkIndex: 0,
-      });
-    } else {
-      return this.setState({
-        walkIndex: walkIndex + 1,
-      });
-    }
-  };
-
   render() {
     return (
       <div className="game-area">
         <Player
-          position={this.state.position}
+          positionX={this.state.positionX}
+          positionY={this.state.positionY}
           direction={this.state.direction}
         />
       </div>
