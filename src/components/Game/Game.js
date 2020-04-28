@@ -52,11 +52,13 @@ class Game extends Component {
 
   render() {
     return (
-      <div className="game-area">
-        <Player
-          position={this.state.position}
-          direction={this.state.direction}
-        />
+      <div className="game-container">
+        <div className="game-area">
+          <Player
+            position={this.state.position}
+            direction={this.state.direction}
+          />
+        </div>
       </div>
     );
   }
