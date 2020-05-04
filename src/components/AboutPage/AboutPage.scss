@@ -31,8 +31,8 @@
 }
 
 .character-bloc {
-  text-align: center;
   margin: 0 10px;
+  width: 90%;
 }
 
 .about img {
@@ -40,7 +40,11 @@
   margin-bottom: 10px;
 }
 
-.character-container p {
+.character-bloc a {
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+  color: black;
   background: linear-gradient(
     17deg,
     rgba(97, 246, 39, 1) 19%,
@@ -51,4 +55,9 @@
   font-family: "Montserrat", sans-serif;
   font-weight: 500;
   opacity: 80%;
+  transition: opacity 0.3s;
+}
+
+.character-bloc a:hover {
+  opacity: 100%;
 }

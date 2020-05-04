@@ -15,16 +15,20 @@
 
 .navbar ul {
   display: flex;
-}
-
-.navbar a {
   font-family: "Montserrat", sans-serif;
   text-decoration: none;
   text-transform: uppercase;
   color: white;
-  padding-right: 30px;
 }
 
-li a:hover {
+.howtoplay-link,
+.aboutus-link {
+  padding-right: 30px;
+  transition: color 0.3s;
+}
+
+.howtoplay-link:hover,
+.aboutus-link:hover {
   color: #8edf37;
+  cursor: pointer;
 }

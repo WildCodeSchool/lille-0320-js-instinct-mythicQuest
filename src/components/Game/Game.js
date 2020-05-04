@@ -6,7 +6,8 @@ import { sprite_size } from "../Constants/Constants";
 
 const initialState = {
   direction: "DOWN",
-  position: [0, 0],
+  positionX: 0,
+  positionY: 0,
 };
 
 class Game extends Component {
@@ -14,36 +15,40 @@ class Game extends Component {
     super(props);
     this.state = initialState;
   }
+
   componentDidMount() {
     document.onkeydown = this.onKeyDown;
   }
 
-  // Fonction pour écouter les évènement sur le clavier
+  // Event Listener when pressing arrow keys and moving character accordingly
   onKeyDown = (e) => {
-    const oldPosition = this.state.position;
-    switch (e.keyCode) {
-      case 38:
+    e.preventDefault();
+    const oldPositionX = this.state.positionX;
+    const oldPositionY = this.state.positionY;
+    const direction = e.code.replace("Arrow", "").toUpperCase();
+    switch (direction) {
+      case "UP":
         this.setState({
-          direction: "UP",
-          position: [oldPosition[0], oldPosition[1] - sprite_size],
+          direction,
+          positionY: oldPositionY - sprite_size,
         });
         break;
-      case 40:
+      case "DOWN":
         this.setState({
-          direction: "DOWN",
-          position: [oldPosition[0], oldPosition[1] + sprite_size],
+          direction,
+          positionY: oldPositionY + sprite_size,
         });
         break;
-      case 37:
+      case "LEFT":
         this.setState({
-          direction: "LEFT",
-          position: [oldPosition[0] - sprite_size, oldPosition[1]],
+          direction,
+          positionX: oldPositionX - sprite_size,
         });
         break;
-      case 39:
+      case "RIGHT":
         this.setState({
-          direction: "RIGHT",
-          position: [oldPosition[0] + sprite_size, oldPosition[1]],
+          direction,
+          positionX: oldPositionX + sprite_size,
         });
         break;
       default:
@@ -57,7 +62,8 @@ class Game extends Component {
         <Coins />
         <Coins />
         <Player
-          position={this.state.position}
+          positionX={this.state.positionX}
+          positionY={this.state.positionY}
           direction={this.state.direction}
         />
       </div>
