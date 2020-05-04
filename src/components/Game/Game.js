@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./Game.scss";
+import Coins from "../Coins/Coins";
 import Player from "../Player/Player";
 import { sprite_size } from "../Constants/Constants";
 
@@ -58,6 +59,8 @@ class Game extends Component {
   render() {
     return (
       <div className="game-area">
+        <Coins />
+        <Coins />
         <Player
           positionX={this.state.positionX}
           positionY={this.state.positionY}
