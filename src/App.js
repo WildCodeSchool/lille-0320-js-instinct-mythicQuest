@@ -1,13 +1,13 @@
 import React from "react";
 import HomePage from "./components/HomePage/HomePage";
 import "./App.scss";
-import Game from "./components/Game/Game";
+import GamePage from "./components/GamePage/GamePage";
 
 function App() {
   return (
     <div className="App">
       <HomePage />
-      <Game />
+      <GamePage />
     </div>
   );
 }
