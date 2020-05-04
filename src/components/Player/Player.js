@@ -49,7 +49,7 @@ class Player extends Component {
       <div
         className="player"
         style={{
-          position: "relative",
+          position: "absolute",
           top: this.props.positionY,
           left: this.props.positionX,
           backgroundImage: `url(${sprite_source})`,
