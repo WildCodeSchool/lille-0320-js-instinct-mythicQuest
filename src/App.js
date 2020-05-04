@@ -1,13 +1,18 @@
 import React from "react";
 import HomePage from "./components/HomePage/HomePage";
-import "./App.scss";
 import GamePage from "./components/GamePage/GamePage";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import "./App.scss";
 
 function App() {
   return (
     <div className="App">
-      <HomePage />
-      <GamePage />
+      <Router>
+        <Switch>
+          <Route exact path="/" component={HomePage} />
+          <Route path="/Gamepage" component={GamePage} />
+        </Switch>
+      </Router>
     </div>
   );
 }

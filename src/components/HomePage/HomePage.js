@@ -3,8 +3,8 @@ import AboutPage from "../AboutPage/AboutPage";
 import Footer from "../Footer/Footer";
 import Header from "../Header/Header";
 import HowToPlay from "../HowToPlay/HowToPlay";
-import "./HomePage.scss";
 import ScrollToTopButton from "../Share/ScrollToTopButton";
+import "./HomePage.scss";
 
 const HomePage = () => {
   return (
