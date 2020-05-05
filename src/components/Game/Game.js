@@ -21,34 +21,16 @@ class Game extends Component {
     window.onkeydown = this.onKeyDown;
   }
 
-  componentDidUpdate() {
-    this.getMovement(this.state.direction);
-  }
-
   // Event Listener when pressing arrow keys and moving character accordingly
   onKeyDown = (e) => {
     e.preventDefault();
     const direction = e.code.replace("Arrow", "").toUpperCase();
     switch (direction) {
       case "UP":
-        this.setState({
-          direction,
-        });
-        break;
       case "DOWN":
-        this.setState({
-          direction,
-        });
-        break;
       case "LEFT":
-        this.setState({
-          direction,
-        });
-        break;
       case "RIGHT":
-        this.setState({
-          direction,
-        });
+        this.getMovement(direction);
         break;
       default:
         return;
@@ -58,8 +40,8 @@ class Game extends Component {
   getMovement = (direction) => {
     const oldPositionX = this.state.positionX;
     const oldPositionY = this.state.positionY;
-    let newPositionX;
-    let newPositionY;
+    let newPositionX = oldPositionX;
+    let newPositionY = oldPositionY;
     switch (direction) {
       case "UP":
         newPositionY = oldPositionY - sprite_size;
@@ -77,10 +59,15 @@ class Game extends Component {
         return;
     }
 
-    if (this.isMovePossible(newPositionX, newPositionY)) {
+    if (this.isMovePossible(newPositionX, newPositionY) && this.state.canMove) {
+      setTimeout(() => {
+        this.setState({ canMove: true });
+      }, 300);
       return this.setState({
         positionX: newPositionX,
         positionY: newPositionY,
+        direction,
+        canMove: false,
       });
     }
   };
@@ -91,9 +78,11 @@ class Game extends Component {
     const max_x = 760;
     const max_y = 560;
 
-    if (x <= min_x || x >= max_x || y <= min_y || y >= max_y) {
+    if (x < min_x || x > max_x || y < min_y || y > max_y) {
       return false;
-    } else return true;
+    } else {
+      return true;
+    }
   };
 
   render() {
