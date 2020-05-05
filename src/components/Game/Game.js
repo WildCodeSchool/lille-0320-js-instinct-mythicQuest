@@ -21,7 +21,6 @@ class Game extends Component {
     window.onkeydown = this.onKeyDown;
   }
 
-
   // Event Listener when pressing arrow keys and moving character accordingly
   onKeyDown = (e) => {
     e.preventDefault();
@@ -62,12 +61,12 @@ class Game extends Component {
     if (this.isMovePossible(newPositionX, newPositionY) && this.state.canMove) {
       setTimeout(() => {
         this.setState({ canMove: true });
-      }, 300)
+      }, 300);
       return this.setState({
         positionX: newPositionX,
         positionY: newPositionY,
         direction,
-        canMove: false
+        canMove: false,
       });
     }
   };
@@ -80,7 +79,9 @@ class Game extends Component {
 
     if (x < min_x || x > max_x || y < min_y || y > max_y) {
       return false;
-    } else return true;
+    } else {
+      return true;
+    }
   };
 
   render() {
