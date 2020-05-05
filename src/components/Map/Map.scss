@@ -29,9 +29,13 @@
 }
 
 .road {
-  background-image: url("/tiles/road1.png");
+  background-image: url("/game/map/road1.png");
 }
 
 .mushroom-house {
-  background-image: url("/tiles/house1.png");
+  background-image: url("/game/map/house1.png");
+}
+
+.sorry {
+  background-image: url("/game/map/sorry.jpg");
 }
