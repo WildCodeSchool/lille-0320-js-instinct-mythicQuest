@@ -1,0 +1,54 @@
+.container-counter {
+  height: 200px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  p {
+    font-family: "Montserrat", sans-serif;
+    font-size: 2em;
+  }
+
+  .heart-container {
+    margin: 15px 0;
+
+    img {
+      width: 40px;
+      margin: 0 5px;
+    }
+  }
+
+  .container-button {
+    display: flex;
+
+    button {
+      font-family: "Montserrat", sans-serif;
+      text-transform: uppercase;
+      border-radius: 20px;
+      border: none;
+      padding: 5px 10px;
+      margin: 0 5px;
+      font-size: 0.7em;
+      outline: none;
+      cursor: pointer;
+    }
+
+    .win {
+      background: linear-gradient(
+        17deg,
+        rgba(120, 224, 143, 1) 0%,
+        rgba(184, 233, 148, 1) 100%
+      );
+    }
+
+    .lose {
+      background: linear-gradient(
+        17deg,
+        rgba(255, 86, 86, 1) 0%,
+        rgba(255, 214, 218, 1) 100%
+      );
+    }
+  }
+}

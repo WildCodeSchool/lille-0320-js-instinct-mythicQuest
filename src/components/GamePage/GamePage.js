@@ -1,14 +1,13 @@
 import React from "react";
 import Game from "../Game/Game";
 import "./GamePage.scss";
+import LifeCounter from "../LifeCounter/LifeCounter";
 
 const GamePage = () => {
   return (
     <div className="game-container">
       <div className="Left-section">
-        <div className="LifeCounter">
-          <p>Life Counter</p>
-        </div>
+        <LifeCounter />
         <div className="Stuff">
           <p>Stuff</p>
         </div>
