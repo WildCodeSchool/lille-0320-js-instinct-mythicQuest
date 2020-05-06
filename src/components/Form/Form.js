@@ -1,5 +1,6 @@
 import React from "react";
 import "./Form.scss";
+import { Link } from "react-router-dom";
 
 class Form extends React.Component {
   constructor() {
@@ -14,7 +15,6 @@ class Form extends React.Component {
   };
 
   handleSubmit = (event) => {
-    alert(`Your username is ${this.state.username}`);
     event.preventDefault();
   };
 
@@ -30,12 +30,14 @@ class Form extends React.Component {
           value={this.state.username}
           onChange={this.handleUsernameChange}
         />
-        <button
-          className={!isEnabled ? "button-start-disabled" : "button-start"}
-          disabled={!isEnabled}
-        >
-          start
-        </button>
+        <Link to={"/Gamepage"}>
+          <button
+            className={!isEnabled ? "button-start-disabled" : "button-start"}
+            disabled={!isEnabled}
+          >
+            start
+          </button>
+        </Link>
       </form>
     );
   }
