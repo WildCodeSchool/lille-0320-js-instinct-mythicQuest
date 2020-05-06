@@ -20,7 +20,7 @@ const Coins = () => {
   return (
     <div
       style={{
-        position: "relative",
+        position: "absolute",
         top: y,
         left: x,
         backgroundImage: `url(${coins_source})`,

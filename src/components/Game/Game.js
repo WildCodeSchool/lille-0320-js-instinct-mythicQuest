@@ -3,6 +3,8 @@ import "./Game.scss";
 import Coins from "../Coins/Coins";
 import Player from "../Player/Player";
 import { sprite_size } from "../Constants/Constants";
+import Map from "../Map/Map";
+import { tiles } from "../Map/index";
 
 const initialState = {
   direction: "DOWN",
@@ -87,8 +89,10 @@ class Game extends Component {
   render() {
     return (
       <div className="game-area">
+        <Map tiles={tiles} />
         <Coins />
         <Coins />
+
         <Player
           positionX={this.state.positionX}
           positionY={this.state.positionY}
