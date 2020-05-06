@@ -33,8 +33,10 @@ class Game extends Component {
       case "LEFT":
       case "RIGHT":
         this.getMovement(direction);
+        this.elementsBlock(direction);
         break;
-      default: return;
+      default:
+        return;
     }
   };
 
@@ -83,6 +85,12 @@ class Game extends Component {
       return false;
     } else {
       return true;
+    }
+  };
+
+  elementsBlock = () => {
+    if (tiles > 0) {
+      return false;
     }
   };
 

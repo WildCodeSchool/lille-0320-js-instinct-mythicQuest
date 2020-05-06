@@ -7,7 +7,7 @@ const getTileSprite = (type) => {
     case 0:
       return "grass";
     case 1:
-      return "rock";
+      return "road";
     case 2:
       return "plant";
     case 3:
@@ -17,7 +17,7 @@ const getTileSprite = (type) => {
     case 5:
       return "chest";
     case 6:
-      return "road";
+      return "rock";
     case 7:
       return "mushroom-house";
     default:
