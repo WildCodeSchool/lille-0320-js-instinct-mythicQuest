@@ -33,7 +33,7 @@ class Game extends Component {
       case "LEFT":
       case "RIGHT":
         this.getMovement(direction);
-        this.elementsBlock(direction);
+
         break;
       default:
         return;
@@ -73,6 +73,12 @@ class Game extends Component {
         canMove: false,
       });
     }
+
+    if (this.elementsBlock() && this.state.canMove) {
+      return this.setState({
+        canMove: false,
+      });
+    }
   };
 
   isMovePossible = (x, y) => {
@@ -89,9 +95,13 @@ class Game extends Component {
   };
 
   elementsBlock = () => {
-    if (tiles > 0) {
-      return false;
-    }
+    const tile = tiles.map((tile) => tile > 1);
+    /*const x = newPositionX
+    const y = newPositionY
+    const nextTile = tile[y][x]*/
+    console.log(tile);
+
+    return tile < 1;
   };
 
   render() {
