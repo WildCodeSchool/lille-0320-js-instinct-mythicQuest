@@ -7,35 +7,13 @@ const LifeCounter = () => {
   const [openModal, setOpenModal] = useState(false);
 
   useEffect(() => {
-    switch (count) {
-      case 2:
-        document.getElementById("heart1").src = "images/heart.png";
-        document.getElementById("heart2").src = "images/heart.png";
-        document.getElementById("heart3").src = "images/heartless.png";
-        break;
-
-      case 1:
-        document.getElementById("heart1").src = "images/heart.png";
-        document.getElementById("heart2").src = "images/heartless.png";
-        document.getElementById("heart3").src = "images/heartless.png";
-        break;
-
-      case 0:
-        document.getElementById("heart1").src = "images/heartless.png";
-        document.getElementById("heart2").src = "images/heartless.png";
-        document.getElementById("heart3").src = "images/heartless.png";
-        setTimeout(() => {
-          const audio = new Audio("sound/dundundun.mp3");
-          audio.volume = 0.4;
-          audio.play();
-          showModal();
-        }, 400);
-        break;
-
-      default:
-        document.getElementById("heart1").src = "images/heart.png";
-        document.getElementById("heart2").src = "images/heart.png";
-        document.getElementById("heart3").src = "images/heart.png";
+    if (count === 0) {
+      setTimeout(() => {
+        const audio = new Audio("sound/dundundun.mp3");
+        audio.volume = 0.4;
+        audio.play();
+        showModal();
+      }, 400);
     }
   }, [count]);
 
@@ -60,9 +38,18 @@ const LifeCounter = () => {
       <div className="container-counter">
         <p>Lives : {count} </p>
         <div className="heart-container">
-          <img id="heart1" src="images/heart.png" alt="Life 1" />
-          <img id="heart2" src="images/heart.png" alt="Life 2" />
-          <img id="heart3" src="images/heart.png" alt="Life 3" />
+          <img
+            src={count === 0 ? "images/heartless.png" : "images/heart.png"}
+            alt="Life 1"
+          />
+          <img
+            src={count <= 1 ? "images/heartless.png" : "images/heart.png"}
+            alt="Life 2"
+          />
+          <img
+            src={count <= 2 ? "images/heartless.png" : "images/heart.png"}
+            alt="Life 3"
+          />
         </div>
         <div className="container-button">
           <button className="lose" onClick={handleClickLose}>
