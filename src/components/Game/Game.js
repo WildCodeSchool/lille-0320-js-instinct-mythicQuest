@@ -32,7 +32,7 @@ const initialState = {
     { x: getRandomX(), y: getRandomY(), display: "" },
     { x: getRandomX(), y: getRandomY(), display: "" },
   ],
-  score: 0,
+  coinsCounter: 0,
 };
 
 class Game extends Component {
@@ -94,6 +94,8 @@ class Game extends Component {
         canMove: false,
       });
     }
+
+    this.getCoins();
   };
 
   isMovePossible = (x, y) => {
@@ -110,7 +112,24 @@ class Game extends Component {
   };
 
   /* COINS */
-  getCoins = () => {};
+  getCoins = () => {
+    let xPlayer = this.state.positionX;
+    let yPlayer = this.state.positionY;
+    let newCoinsList = this.state.coinsList;
+    for (let i = 0; i < newCoinsList.length; i++) {
+      if (
+        (newCoinsList[i].x === xPlayer || newCoinsList[i].y === yPlayer) &&
+        newCoinsList[i].display !== "none"
+      ) {
+        newCoinsList[i].display = "none";
+        this.setState({
+          coinsList: newCoinsList,
+          coinsCounter: this.state.coinsCounter + 1,
+        });
+        console.log(this.state.coinsCounter);
+      }
+    }
+  };
 
   render() {
     return (
