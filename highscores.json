@@ -1,59 +1,59 @@
 {
-    "highscores": [
-      {
-        "id": "7",
-        "nom": "LOIC",
-        "score": "200"
-      },
-      {
-        "id": "4",
-        "nom": "BENJ",
-        "score": "400"
-      },
-      {
-        "id": "3",
-        "nom": "XAV_",
-        "score": "500"
-      },
-      {
-        "id": "1",
-        "nom": "MARG",
-        "score": "900"
-      },
-      {
-        "id": "2",
-        "nom": "BERE",
-        "score": "100"
-      },
-      {
-        "id": "5",
-        "nom": "SOPH",
-        "score": "300"
-      }
-      {
-        "id": "6",
-        "nom": "JUL",
-        "score": "200"
-      },
-      {
-        "id": "8",
-        "nom": "VAL",
-        "score": "400"
-      },
-      {
-        "id": "3",
-        "nom": "XAV_",
-        "score": "500"
-      },
-      {
-        "id": "9",
-        "nom": "SARAH",
-        "score": "900"
-      },
-      {
-        "id": "10",
-        "nom": "GHAZI",
-        "score": "100"
-      }
-    ]
-  }
+  "highscores": [
+    {
+      "id": "7",
+      "nom": "LOIC",
+      "score": "200"
+    },
+    {
+      "id": "4",
+      "nom": "BENJ",
+      "score": "400"
+    },
+    {
+      "id": "3",
+      "nom": "XAV_",
+      "score": "500"
+    },
+    {
+      "id": "1",
+      "nom": "MARG",
+      "score": "900"
+    },
+    {
+      "id": "2",
+      "nom": "BERE",
+      "score": "100"
+    },
+    {
+      "id": "5",
+      "nom": "SOPH",
+      "score": "300"
+    },
+    {
+      "id": "6",
+      "nom": "JUL",
+      "score": "200"
+    },
+    {
+      "id": "8",
+      "nom": "VAL",
+      "score": "400"
+    },
+    {
+      "id": "3",
+      "nom": "XAV_",
+      "score": "500"
+    },
+    {
+      "id": "9",
+      "nom": "SARAH",
+      "score": "900"
+    },
+    {
+      "id": "10",
+      "nom": "GHAZI",
+      "score": "100"
+    }
+  ]
+}
