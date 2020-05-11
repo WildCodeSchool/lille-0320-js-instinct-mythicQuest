@@ -6,11 +6,33 @@ import { sprite_size } from "../Constants/Constants";
 import Map from "../Map/Map";
 import { tiles } from "../Map/index";
 
+/* RANDOM POSITION FOR COINS */
+const getRandomY = () => {
+  const min = 1;
+  const max = 570;
+  let num = Math.floor((Math.random() * (max - min + 1) + min) / 2) * 2;
+  return num;
+};
+
+const getRandomX = () => {
+  const min = 1;
+  const max = 570;
+  let num = Math.floor((Math.random() * (max - min + 1) + min) / 2) * 2;
+  return num;
+};
+
+/* INITIAL STATE */
 const initialState = {
   direction: "DOWN",
   positionX: 0,
   positionY: 0,
   canMove: true,
+  coinsList: [
+    { x: getRandomX(), y: getRandomY(), display: "" },
+    { x: getRandomX(), y: getRandomY(), display: "" },
+    { x: getRandomX(), y: getRandomY(), display: "" },
+  ],
+  score: 0,
 };
 
 class Game extends Component {
@@ -34,7 +56,8 @@ class Game extends Component {
       case "RIGHT":
         this.getMovement(direction);
         break;
-      default: return;
+      default:
+        return;
     }
   };
 
@@ -86,13 +109,18 @@ class Game extends Component {
     }
   };
 
+  /* COINS */
+  getCoins = () => {};
+
   render() {
     return (
       <div className="game-area">
         <Map tiles={tiles} />
-        <Coins />
-        <Coins />
-
+        {this.state.coinsList.map((coin, index) => {
+          return (
+            <Coins x={coin.x} y={coin.y} display={coin.display} key={index} />
+          );
+        })}
         <Player
           positionX={this.state.positionX}
           positionY={this.state.positionY}
