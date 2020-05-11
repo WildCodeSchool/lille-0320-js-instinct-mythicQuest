@@ -113,6 +113,11 @@ class Game extends Component {
     if (x < min_x || x > max_x || y < min_y || y > max_y) {
       return false;
     }
+    const cX = cssToCoords(x);
+    const cY = cssToCoords(y);
+    if (tiles[cY][cX] === 0 || tiles[cY][cX] === 6) {
+      return false;
+    }
     return true;
   };
 
