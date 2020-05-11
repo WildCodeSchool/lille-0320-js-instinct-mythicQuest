@@ -17,6 +17,20 @@ const getRandomX = () => {
   return num;
 };
 
+const getRandomCoords = () => {
+  let x = null;
+  let y = null;
+  let cX = null;
+  let cY = null;
+  do {
+    x = getRandomX();
+    y = getRandomY();
+    cX = cssToCoords(x);
+    cY = cssToCoords(y);
+  } while (tiles[cY][cX] > 3);
+  return { x, y };
+};
+
 /* TRANSFORM CSS TO COORDS */
 const cssToCoords = (cssCoord) => {
   return Math.floor(cssCoord / 40);
@@ -29,9 +43,9 @@ const initialState = {
   positionY: 0,
   canMove: true,
   coinsList: [
-    { x: getRandomX(), y: getRandomY(), display: "" },
-    { x: getRandomX(), y: getRandomY(), display: "" },
-    { x: getRandomX(), y: getRandomY(), display: "" },
+    { coords: getRandomCoords(), display: "" },
+    { coords: getRandomCoords(), display: "" },
+    { coords: getRandomCoords(), display: "" },
   ],
   coinsCounter: 0,
 };
@@ -44,6 +58,7 @@ class Game extends Component {
 
   componentDidMount() {
     window.onkeydown = this.onKeyDown;
+    console.log(getRandomCoords());
   }
 
   componentDidUpdate() {
@@ -121,8 +136,8 @@ class Game extends Component {
     let yPlayer = cssToCoords(this.state.positionY);
     let newCoinsList = this.state.coinsList;
     for (let i = 0; i < newCoinsList.length; i++) {
-      let newCoinsX = cssToCoords(newCoinsList[i].x);
-      let newCoinsY = cssToCoords(newCoinsList[i].y);
+      let newCoinsX = cssToCoords(newCoinsList[i].coords.x);
+      let newCoinsY = cssToCoords(newCoinsList[i].coords.y);
       if (
         newCoinsX === xPlayer &&
         newCoinsY === yPlayer &&
@@ -143,7 +158,12 @@ class Game extends Component {
         <Map tiles={tiles} />
         {this.state.coinsList.map((coin, index) => {
           return (
-            <Coins x={coin.x} y={coin.y} display={coin.display} key={index} />
+            <Coins
+              x={coin.coords.x}
+              y={coin.coords.y}
+              display={coin.display}
+              key={index}
+            />
           );
         })}
         <Player
