@@ -8,17 +8,23 @@ import { tiles } from "../Map/index";
 
 /* RANDOM POSITION FOR COINS */
 const getRandomY = () => {
-  const min = 1;
-  const max = 570;
-  let num = Math.floor((Math.random() * (max - min + 1) + min) / 2) * 2;
+  //const min = 1;
+  //const max = 570;
+  //let num = Math.floor((Math.random() * (max - min + 1) + min) / 2) * 2;
+  const num = Math.floor(Math.random() * 15) * 40;
   return num;
 };
 
 const getRandomX = () => {
-  const min = 1;
-  const max = 570;
-  let num = Math.floor((Math.random() * (max - min + 1) + min) / 2) * 2;
+  //const min = 1;
+  //const max = 570;
+  //let num = Math.floor((Math.random() * (max - min + 1) + min) / 2) * 2;
+  const num = Math.floor(Math.random() * 20) * 40;
   return num;
+};
+
+const cssToCoords = (cssCoord) => {
+  return Math.floor(cssCoord / 40);
 };
 
 /* INITIAL STATE */
@@ -106,9 +112,8 @@ class Game extends Component {
 
     if (x < min_x || x > max_x || y < min_y || y > max_y) {
       return false;
-    } else {
-      return true;
     }
+    return true;
   };
 
   /* COINS */
