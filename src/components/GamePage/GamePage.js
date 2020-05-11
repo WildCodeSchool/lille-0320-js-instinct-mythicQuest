@@ -2,22 +2,28 @@ import React from "react";
 import Game from "../Game/Game";
 import "./GamePage.scss";
 import LifeCounter from "../LifeCounter/LifeCounter";
+import ScoreBoard from "../ScoreBoard/ScoreBoard";
 
 const GamePage = () => {
   return (
     <div className="game-container">
       <div className="Left-section">
-        <LifeCounter />
-        <div className="Stuff">
-          <p>Stuff</p>
-        </div>
+        <img src="images/logo-mythic-quest.png" alt="logo mythic quest" />
         <div className="Divers">
-          <p>À préciser</p>
+          <p>Menu / Réglages</p>
         </div>
       </div>
-      <Game />
+      <div>
+        <div className="game-header">
+          <LifeCounter />
+          <div className="Stuff">
+            <p>Compteur Stuff</p>
+          </div>
+        </div>
+        <Game />
+      </div>
       <div className="Right-section">
-        <p>Score</p>
+        <ScoreBoard />
       </div>
     </div>
   );
