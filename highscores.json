@@ -1,0 +1,54 @@
+{
+  "highscores": [
+    {
+      "id": "7",
+      "nom": "LOIC",
+      "score": "210"
+    },
+    {
+      "id": "4",
+      "nom": "BENJ",
+      "score": "460"
+    },
+    {
+      "id": "3",
+      "nom": "XAV_",
+      "score": "580"
+    },
+    {
+      "id": "1",
+      "nom": "MARG",
+      "score": "900"
+    },
+    {
+      "id": "2",
+      "nom": "BERE",
+      "score": "120"
+    },
+    {
+      "id": "5",
+      "nom": "SOPH",
+      "score": "300"
+    },
+    {
+      "id": "6",
+      "nom": "JUL",
+      "score": "230"
+    },
+    {
+      "id": "8",
+      "nom": "VAL",
+      "score": "400"
+    },
+    {
+      "id": "3",
+      "nom": "XAV_",
+      "score": "500"
+    },
+    {
+      "id": "9",
+      "nom": "SARAH",
+      "score": "800"
+    }
+  ]
+}
