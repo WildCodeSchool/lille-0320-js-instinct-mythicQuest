@@ -8,21 +8,16 @@ import { tiles } from "../Map/index";
 
 /* RANDOM POSITION FOR COINS */
 const getRandomY = () => {
-  //const min = 1;
-  //const max = 570;
-  //let num = Math.floor((Math.random() * (max - min + 1) + min) / 2) * 2;
   const num = Math.floor(Math.random() * 15) * 40;
   return num;
 };
 
 const getRandomX = () => {
-  //const min = 1;
-  //const max = 570;
-  //let num = Math.floor((Math.random() * (max - min + 1) + min) / 2) * 2;
   const num = Math.floor(Math.random() * 20) * 40;
   return num;
 };
 
+/* TRANSFORM CSS TO COORDS */
 const cssToCoords = (cssCoord) => {
   return Math.floor(cssCoord / 40);
 };
@@ -49,6 +44,12 @@ class Game extends Component {
 
   componentDidMount() {
     window.onkeydown = this.onKeyDown;
+  }
+
+  componentDidUpdate() {
+    if (this.state.canMove === true) {
+      this.getCoins();
+    }
   }
 
   // Event Listener when pressing arrow keys and moving character accordingly
@@ -100,8 +101,6 @@ class Game extends Component {
         canMove: false,
       });
     }
-
-    this.getCoins();
   };
 
   isMovePossible = (x, y) => {
@@ -113,22 +112,20 @@ class Game extends Component {
     if (x < min_x || x > max_x || y < min_y || y > max_y) {
       return false;
     }
-    const cX = cssToCoords(x);
-    const cY = cssToCoords(y);
-    if (tiles[cY][cX] === 0 || tiles[cY][cX] === 6) {
-      return false;
-    }
     return true;
   };
 
   /* COINS */
   getCoins = () => {
-    let xPlayer = this.state.positionX;
-    let yPlayer = this.state.positionY;
+    let xPlayer = cssToCoords(this.state.positionX);
+    let yPlayer = cssToCoords(this.state.positionY);
     let newCoinsList = this.state.coinsList;
     for (let i = 0; i < newCoinsList.length; i++) {
+      let newCoinsX = cssToCoords(newCoinsList[i].x);
+      let newCoinsY = cssToCoords(newCoinsList[i].y);
       if (
-        (newCoinsList[i].x === xPlayer || newCoinsList[i].y === yPlayer) &&
+        newCoinsX === xPlayer &&
+        newCoinsY === yPlayer &&
         newCoinsList[i].display !== "none"
       ) {
         newCoinsList[i].display = "none";
@@ -136,7 +133,6 @@ class Game extends Component {
           coinsList: newCoinsList,
           coinsCounter: this.state.coinsCounter + 1,
         });
-        console.log(this.state.coinsCounter);
       }
     }
   };
