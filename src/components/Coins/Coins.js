@@ -1,28 +1,14 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { coins_source, coins_size } from "../Constants/Constants";
 
-const Coins = () => {
-  const [x, setX] = useState();
-  const [y, setY] = useState();
-
-  useEffect(() => {
-    setX(getRandomNum());
-    setY(getRandomNum());
-  }, []);
-
-  const getRandomNum = () => {
-    const min = 1;
-    const max = 570;
-    let num = Math.floor((Math.random() * (max - min + 1) + min) / 2) * 2;
-    return num;
-  };
-
+const Coins = ({ x, y, display }) => {
   return (
     <div
       style={{
+        display: display,
         position: "absolute",
-        top: y,
-        left: x,
+        top: `${y}px`,
+        left: `${x}px`,
         backgroundImage: `url(${coins_source})`,
         backgroundPosition: `${coins_size * 4}px 0`,
         width: `${coins_size}px`,
