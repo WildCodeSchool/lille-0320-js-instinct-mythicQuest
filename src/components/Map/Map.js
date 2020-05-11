@@ -22,8 +22,7 @@ const getTileSprite = (type) => {
       return "mushroom-house";
     case 8:
       return "plant";
-    case 9:
-      return "tre";
+
     default:
       return "sorry";
   }
