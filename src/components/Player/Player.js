@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { sprite_source, sprite_size } from "../Constants/Constants";
 import "./Player.scss";
 
+
 class Player extends Component {
   constructor(props) {
     super(props);
@@ -41,6 +42,7 @@ class Player extends Component {
         break;
       default:
         return;
+
     }
   };
 
@@ -49,7 +51,7 @@ class Player extends Component {
       <div
         className="player"
         style={{
-          position: "relative",
+          position: "absolute",
           top: this.props.positionY,
           left: this.props.positionX,
           backgroundImage: `url(${sprite_source})`,

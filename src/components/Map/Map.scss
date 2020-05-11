@@ -1,0 +1,41 @@
+.map-area {
+  background-image: url("/game/map/texture1.jpg");
+}
+.row {
+  width: 800px;
+  height: 40px;
+}
+
+.tile {
+  display: inline-flex;
+}
+
+.plant {
+  background-image: url("/game/map/plant_01.png");
+}
+.tree {
+  background-image: url("/game/map/tree_4.png");
+}
+
+.rock {
+  background-image: url("/game/map/stone1.png");
+}
+.water {
+  background-image: url("/game/map/water1.jpg");
+}
+
+.chest {
+  background-image: url("/game/map/chest.png");
+}
+
+.road {
+  background-image: url("/game/map/road1.png");
+}
+
+.mushroom-house {
+  background-image: url("/game/map/house1.png");
+}
+
+.sorry {
+  background-image: url("/game/map/sorry.jpg");
+}

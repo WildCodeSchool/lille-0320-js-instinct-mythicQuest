@@ -1,16 +1,7 @@
-.game-container {
-  background: url("/images/forest.jpg");
-  height: 100vh;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: top center;
-  display: flex;
-}
-
 .game-area {
+  position: relative;
   width: 800px;
   height: 600px;
-  background-color: #8edf37;
   margin: auto;
   box-shadow: 0px 20px 112px 0px rgba(48, 209, 155, 1);
 }
