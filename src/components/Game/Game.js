@@ -114,7 +114,7 @@ class Game extends Component {
     }
     const cX = cssToCoords(x);
     const cY = cssToCoords(y);
-    if (tiles[cY][cX] > 3 || tiles[cY][cX] === 5) {
+    if (tiles[cY][cX] > 3) {
       return false;
     }
     return true;
