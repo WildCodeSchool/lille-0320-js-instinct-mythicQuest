@@ -8,21 +8,30 @@ import { tiles } from "../Map/index";
 
 /* RANDOM POSITION FOR COINS */
 const getRandomY = () => {
-  //const min = 1;
-  //const max = 570;
-  //let num = Math.floor((Math.random() * (max - min + 1) + min) / 2) * 2;
   const num = Math.floor(Math.random() * 15) * 40;
   return num;
 };
 
 const getRandomX = () => {
-  //const min = 1;
-  //const max = 570;
-  //let num = Math.floor((Math.random() * (max - min + 1) + min) / 2) * 2;
   const num = Math.floor(Math.random() * 20) * 40;
   return num;
 };
 
+const getRandomCoords = () => {
+  let x = null;
+  let y = null;
+  let cX = null;
+  let cY = null;
+  do {
+    x = getRandomX();
+    y = getRandomY();
+    cX = cssToCoords(x);
+    cY = cssToCoords(y);
+  } while (tiles[cY][cX] > 3);
+  return { x, y };
+};
+
+/* TRANSFORM CSS TO COORDS */
 const cssToCoords = (cssCoord) => {
   return Math.floor(cssCoord / 40);
 };
@@ -34,9 +43,9 @@ const initialState = {
   positionY: 0,
   canMove: true,
   coinsList: [
-    { x: getRandomX(), y: getRandomY(), display: "" },
-    { x: getRandomX(), y: getRandomY(), display: "" },
-    { x: getRandomX(), y: getRandomY(), display: "" },
+    { coords: getRandomCoords(), display: "" },
+    { coords: getRandomCoords(), display: "" },
+    { coords: getRandomCoords(), display: "" },
   ],
   coinsCounter: 0,
 };
@@ -49,6 +58,12 @@ class Game extends Component {
 
   componentDidMount() {
     window.onkeydown = this.onKeyDown;
+  }
+
+  componentDidUpdate() {
+    if (this.state.canMove === true) {
+      this.getCoins();
+    }
   }
 
   // Event Listener when pressing arrow keys and moving character accordingly
@@ -111,7 +126,7 @@ class Game extends Component {
 
     if (x < min_x || x > max_x || y < min_y || y > max_y) {
       return false;
-    }
+    } 
     const cX = cssToCoords(x);
     const cY = cssToCoords(y);
     if (tiles[cY][cX] > 3) {
@@ -120,13 +135,40 @@ class Game extends Component {
     return true;
   };
 
+  /* COINS */
+  getCoins = () => {
+    let xPlayer = cssToCoords(this.state.positionX);
+    let yPlayer = cssToCoords(this.state.positionY);
+    let newCoinsList = this.state.coinsList;
+    for (let i = 0; i < newCoinsList.length; i++) {
+      let newCoinsX = cssToCoords(newCoinsList[i].coords.x);
+      let newCoinsY = cssToCoords(newCoinsList[i].coords.y);
+      if (
+        newCoinsX === xPlayer &&
+        newCoinsY === yPlayer &&
+        newCoinsList[i].display !== "none"
+      ) {
+        newCoinsList[i].display = "none";
+        this.setState({
+          coinsList: newCoinsList,
+          coinsCounter: this.state.coinsCounter + 1,
+        });
+      }
+
   render() {
     return (
       <div className="game-area">
         <Map tiles={tiles} />
-        <Coins />
-        <Coins />
-
+        {this.state.coinsList.map((coin, index) => {
+          return (
+            <Coins
+              x={coin.coords.x}
+              y={coin.coords.y}
+              display={coin.display}
+              key={index}
+            />
+          );
+        })}
         <Player
           positionX={this.state.positionX}
           positionY={this.state.positionY}
