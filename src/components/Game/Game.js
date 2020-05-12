@@ -6,11 +6,39 @@ import { sprite_size } from "../Constants/Constants";
 import Map from "../Map/Map";
 import { tiles } from "../Map/index";
 
+/* RANDOM POSITION FOR COINS */
+const getRandomY = () => {
+  //const min = 1;
+  //const max = 570;
+  //let num = Math.floor((Math.random() * (max - min + 1) + min) / 2) * 2;
+  const num = Math.floor(Math.random() * 15) * 40;
+  return num;
+};
+
+const getRandomX = () => {
+  //const min = 1;
+  //const max = 570;
+  //let num = Math.floor((Math.random() * (max - min + 1) + min) / 2) * 2;
+  const num = Math.floor(Math.random() * 20) * 40;
+  return num;
+};
+
+const cssToCoords = (cssCoord) => {
+  return Math.floor(cssCoord / 40);
+};
+
+/* INITIAL STATE */
 const initialState = {
   direction: "DOWN",
   positionX: 0,
   positionY: 0,
   canMove: true,
+  coinsList: [
+    { x: getRandomX(), y: getRandomY(), display: "" },
+    { x: getRandomX(), y: getRandomY(), display: "" },
+    { x: getRandomX(), y: getRandomY(), display: "" },
+  ],
+  coinsCounter: 0,
 };
 
 class Game extends Component {
@@ -33,8 +61,10 @@ class Game extends Component {
       case "LEFT":
       case "RIGHT":
         this.getMovement(direction);
+
         break;
-      default: return;
+      default:
+        return;
     }
   };
 
@@ -81,9 +111,13 @@ class Game extends Component {
 
     if (x < min_x || x > max_x || y < min_y || y > max_y) {
       return false;
-    } else {
-      return true;
     }
+    const cX = cssToCoords(x);
+    const cY = cssToCoords(y);
+    if (tiles[cY][cX] > 3) {
+      return false;
+    }
+    return true;
   };
 
   render() {
