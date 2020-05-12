@@ -1,19 +1,16 @@
-.provisoire {
+.coinsCounter {
+  width: 33%;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
-  width: 50%;
   font-family: "Montserrat", sans-serif;
-}
+  border-right: 1px solid #8edf37;
+  color: white;
 
-.coinsCounter-container {
-  display: flex;
-}
-
-.gold-container,
-.silver-container {
-  display: flex;
-  align-items: center;
-  margin: 0 10px;
+  .gold-container,
+  .silver-container {
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+  }
 }

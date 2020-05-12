@@ -5,9 +5,9 @@ import Music from "../Music/Music";
 
 const LeftSettings = () => {
   return (
-    <div>
+    <div className="buttonHomeContainer">
       <Link to={"/"}>
-        <button>Home</button>
+        <button className="buttonHome">Home</button>
       </Link>
       <Music />
     </div>

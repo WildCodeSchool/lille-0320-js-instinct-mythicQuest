@@ -17,6 +17,8 @@ const LifeCounter = () => {
     }
   }, [count]);
 
+  // Code commenté provisoire, sera intégré dans dans une future US
+
   // const handleClickLose = () => {
   //   if (count > 0) setCount(count - 1);
   //   const audio = new Audio("sound/lost-life.wav");
@@ -51,14 +53,6 @@ const LifeCounter = () => {
             alt="Life 3"
           />
         </div>
-        {/* <div className="container-button">
-          <button className="lose" onClick={handleClickLose}>
-            Lose a life
-          </button>
-          <button className="win" onClick={handleClickWin}>
-            Win a life
-          </button>
-        </div> */}
       </div>
       <Modal showModal={openModal} />
     </>

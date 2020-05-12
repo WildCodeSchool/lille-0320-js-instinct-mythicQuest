@@ -7,6 +7,7 @@ import Map from "../Map/Map";
 import { tiles } from "../Map/index";
 import LifeCounter from "../LifeCounter/LifeCounter";
 import StuffCounter from "../StuffCounter/StuffCounter";
+import ScoreCounter from "../ScoreCounter/ScoreCounter";
 
 const initialState = {
   direction: "DOWN",
@@ -97,6 +98,7 @@ class Game extends Component {
         <div className="header-game">
           <LifeCounter />
           <StuffCounter />
+          <ScoreCounter />
         </div>
         <div className="game-area">
           <Map tiles={tiles} />

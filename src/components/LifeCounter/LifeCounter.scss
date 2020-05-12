@@ -1,20 +1,23 @@
 .container-counter {
-  color: white;
   display: flex;
   align-items: center;
-  width: 50%;
+  justify-content: center;
+  color: white;
+  width: 33%;
   padding-left: 12px;
+  border-right: 1px solid #8edf37;
 
   p {
     font-family: "Montserrat", sans-serif;
-    font-size: 1.2em;
   }
 
   .heart-container {
     margin-left: 10px;
+    display: flex;
+    align-items: center;
 
     img {
-      width: 30px;
+      width: 20px;
       margin: 0 3px;
     }
   }

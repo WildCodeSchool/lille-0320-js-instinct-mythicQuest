@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import "./Music.scss";
 
 export default function Music() {
   const [sound, setSound] = useState(false);
@@ -20,6 +21,7 @@ export default function Music() {
     <div>
       <div className="button-container">
         <button
+          className="buttonMusic"
           onClick={() => {
             setSound(!sound);
           }}

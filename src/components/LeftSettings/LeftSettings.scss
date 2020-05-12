@@ -1,0 +1,22 @@
+.buttonHomeContainer {
+  width: 60%;
+
+  .buttonHome {
+    width: 100%;
+    background-color: transparent;
+    border: 1px solid #8edf37;
+    border-radius: 5px;
+    color: white;
+    margin: 10px 0;
+    padding: 5px 10px;
+    text-transform: uppercase;
+    font-family: "Montserrat", sans-serif;
+    transition: 0.2s;
+
+    &:hover {
+      background-color: #8edf37;
+      font-weight: bold;
+      color: black;
+    }
+  }
+}
