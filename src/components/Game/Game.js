@@ -5,6 +5,7 @@ import Player from "../Player/Player";
 import { sprite_size } from "../Constants/Constants";
 import Map from "../Map/Map";
 import { tiles } from "../Map/index";
+import LifeCounter from "../LifeCounter/LifeCounter";
 
 const initialState = {
   direction: "DOWN",
@@ -34,7 +35,8 @@ class Game extends Component {
       case "RIGHT":
         this.getMovement(direction);
         break;
-      default: return;
+      default:
+        return;
     }
   };
 
@@ -86,18 +88,25 @@ class Game extends Component {
     }
   };
 
+  ///////////////////////////////////////////////////
+
   render() {
     return (
-      <div className="game-area">
-        <Map tiles={tiles} />
-        <Coins />
-        <Coins />
-
-        <Player
-          positionX={this.state.positionX}
-          positionY={this.state.positionY}
-          direction={this.state.direction}
-        />
+      <div>
+        <div className="header-game">
+          <LifeCounter />
+          <div className="stuff-counter">test</div>
+        </div>
+        <div className="game-area">
+          <Map tiles={tiles} />
+          <Coins />
+          <Coins />
+          <Player
+            positionX={this.state.positionX}
+            positionY={this.state.positionY}
+            direction={this.state.direction}
+          />
+        </div>
       </div>
     );
   }

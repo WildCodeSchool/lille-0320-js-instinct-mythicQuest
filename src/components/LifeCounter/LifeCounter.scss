@@ -19,35 +19,35 @@
     }
   }
 
-  // .container-button {
-  //   display: flex;
+  .container-button {
+    display: flex;
 
-  //   button {
-  //     font-family: "Montserrat", sans-serif;
-  //     text-transform: uppercase;
-  //     border-radius: 20px;
-  //     border: none;
-  //     padding: 5px 10px;
-  //     margin: 0 5px;
-  //     font-size: 0.7em;
-  //     outline: none;
-  //     cursor: pointer;
-  //   }
+    button {
+      font-family: "Montserrat", sans-serif;
+      text-transform: uppercase;
+      border-radius: 20px;
+      border: none;
+      padding: 5px 10px;
+      margin: 0 5px;
+      font-size: 0.7em;
+      outline: none;
+      cursor: pointer;
+    }
 
-  //   .win {
-  //     background: linear-gradient(
-  //       17deg,
-  //       rgba(120, 224, 143, 1) 0%,
-  //       rgba(184, 233, 148, 1) 100%
-  //     );
-  //   }
+    .win {
+      background: linear-gradient(
+        17deg,
+        rgba(120, 224, 143, 1) 0%,
+        rgba(184, 233, 148, 1) 100%
+      );
+    }
 
-  //   .lose {
-  //     background: linear-gradient(
-  //       17deg,
-  //       rgba(255, 86, 86, 1) 0%,
-  //       rgba(255, 214, 218, 1) 100%
-  //     );
-  //   }
-  // }
+    .lose {
+      background: linear-gradient(
+        17deg,
+        rgba(255, 86, 86, 1) 0%,
+        rgba(255, 214, 218, 1) 100%
+      );
+    }
+  }
 }

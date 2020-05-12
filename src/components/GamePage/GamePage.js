@@ -1,8 +1,7 @@
 import React from "react";
 import Game from "../Game/Game";
-import "./GamePage.scss";
-import LifeCounter from "../LifeCounter/LifeCounter";
 import ScoreBoard from "../ScoreBoard/ScoreBoard";
+import "./GamePage.scss";
 
 const GamePage = () => {
   return (
@@ -13,15 +12,7 @@ const GamePage = () => {
           <p>Menu / Réglages</p>
         </div>
       </div>
-      <div>
-        <div className="game-header">
-          <LifeCounter />
-          <div className="Stuff">
-            <p>Compteur Stuff</p>
-          </div>
-        </div>
-        <Game />
-      </div>
+      <Game />
       <div className="Right-section">
         <ScoreBoard />
       </div>
