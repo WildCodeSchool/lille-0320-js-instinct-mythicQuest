@@ -76,6 +76,7 @@ class Game extends Component {
       case "LEFT":
       case "RIGHT":
         this.getMovement(direction);
+
         break;
       default:
         return;
@@ -125,6 +126,11 @@ class Game extends Component {
 
     if (x < min_x || x > max_x || y < min_y || y > max_y) {
       return false;
+    } 
+    const cX = cssToCoords(x);
+    const cY = cssToCoords(y);
+    if (tiles[cY][cX] > 3) {
+      return false;
     }
     return true;
   };
@@ -148,8 +154,6 @@ class Game extends Component {
           coinsCounter: this.state.coinsCounter + 1,
         });
       }
-    }
-  };
 
   render() {
     return (
