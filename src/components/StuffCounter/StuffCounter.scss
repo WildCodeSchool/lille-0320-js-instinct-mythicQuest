@@ -1,0 +1,19 @@
+.provisoire {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  width: 50%;
+  font-family: "Montserrat", sans-serif;
+}
+
+.coinsCounter-container {
+  display: flex;
+}
+
+.gold-container,
+.silver-container {
+  display: flex;
+  align-items: center;
+  margin: 0 10px;
+}

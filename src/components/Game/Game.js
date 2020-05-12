@@ -6,6 +6,7 @@ import { sprite_size } from "../Constants/Constants";
 import Map from "../Map/Map";
 import { tiles } from "../Map/index";
 import LifeCounter from "../LifeCounter/LifeCounter";
+import StuffCounter from "../StuffCounter/StuffCounter";
 
 const initialState = {
   direction: "DOWN",
@@ -95,7 +96,7 @@ class Game extends Component {
       <div>
         <div className="header-game">
           <LifeCounter />
-          <div className="stuff-counter">test</div>
+          <StuffCounter />
         </div>
         <div className="game-area">
           <Map tiles={tiles} />
