@@ -58,7 +58,6 @@ class Game extends Component {
 
   componentDidMount() {
     window.onkeydown = this.onKeyDown;
-    console.log(getRandomCoords());
   }
 
   componentDidUpdate() {
