@@ -12,16 +12,20 @@
 .secret-tree {
   background-image: url("/game/map/secret_tree.png");
 }
+.poison-element {
+  background-image: url("/game/map/poison-tree.png");
+}
 
 .plant {
   background-image: url("/game/map/plant_01.png");
 }
 .tree {
-  background-image: url("/game/map/tree_4.png");
+  background-image: url("/game/map/tree.png");
 }
 
 .rock {
   background-image: url("/game/map/stone1.png");
+  background-repeat: no-repeat;
 }
 .water {
   background-image: url("/game/map/water1.jpg");
@@ -29,14 +33,15 @@
 
 .chest {
   background-image: url("/game/map/chest.png");
+  background-repeat: no-repeat;
 }
 
 .road {
   background-image: url("/game/map/road1.png");
 }
 
-.mushroom-house {
-  background-image: url("/game/map/house1.png");
+.house {
+  background-image: url("/game/map/house.png");
 }
 
 .sorry {
