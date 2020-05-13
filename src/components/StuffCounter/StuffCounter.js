@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import "./StuffCounter.scss";
 
-const StuffCounter = () => {
+const StuffCounter = ({ silverCounter }) => {
   const [countGold, setCountGold] = useState(0);
-  const [countSilver, setCountSilver] = useState(0);
 
   return (
     <div className="coinsCounter">
@@ -13,7 +12,7 @@ const StuffCounter = () => {
       </div>
       <div className="silver-container">
         <img src="images/silver.gif" alt="silver coin" />
-        <p>X {countSilver} </p>
+        <p>X {silverCounter} </p>
       </div>
     </div>
   );
