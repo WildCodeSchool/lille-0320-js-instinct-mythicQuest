@@ -2,31 +2,20 @@ import React, { useState, useEffect } from "react";
 import "./Music.scss";
 
 export default function Music() {
-  const [sound, setSound] = useState(false);
+  const [sound] = useState(new Audio("sound/gamesound.ogg"));
+  const [playing, setPlaying] = useState(false);
+
+  const toggle = () => setPlaying(!playing);
 
   useEffect(() => {
-    const audio = new Audio("sound/gamesound.ogg");
-    if (sound === true) {
-      audio.play();
-      audio.volume = 0.4;
-    } else {
-      audio.pause();
-      audio.currentTime = 0;
-    }
-  }, [sound]);
-
-  const displayButtonName = sound ? "Desactivate Music" : "Activate Music";
+    playing ? sound.play() : sound.pause();
+  }, [playing]);
 
   return (
     <div>
       <div className="button-container">
-        <button
-          className="buttonMusic"
-          onClick={() => {
-            setSound(!sound);
-          }}
-        >
-          {displayButtonName}
+        <button className="buttonMusic" onClick={toggle}>
+          {playing ? "Pause" : "Play Music"}
         </button>
       </div>
     </div>
