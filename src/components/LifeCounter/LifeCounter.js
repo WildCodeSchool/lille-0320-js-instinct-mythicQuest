@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Modal from "../Modal/Modal";
 import "./LifeCounter.scss";
 
-const LifeCounter = () => {
+const LifeCounter = ({ lifeCounter }) => {
   const [count, setCount] = useState(3);
   const [openModal, setOpenModal] = useState(false);
 
@@ -38,18 +38,20 @@ const LifeCounter = () => {
   return (
     <>
       <div className="container-counter">
-        <p>Lives : {count} </p>
+        <p>Lives : {lifeCounter} </p>
         <div className="heart-container">
           <img
-            src={count === 0 ? "images/heartless.png" : "images/heart.png"}
+            src={
+              lifeCounter === 0 ? "images/heartless.png" : "images/heart.png"
+            }
             alt="Life 1"
           />
           <img
-            src={count <= 1 ? "images/heartless.png" : "images/heart.png"}
+            src={lifeCounter <= 1 ? "images/heartless.png" : "images/heart.png"}
             alt="Life 2"
           />
           <img
-            src={count <= 2 ? "images/heartless.png" : "images/heart.png"}
+            src={lifeCounter <= 2 ? "images/heartless.png" : "images/heart.png"}
             alt="Life 3"
           />
         </div>
