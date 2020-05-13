@@ -6,6 +6,8 @@ import {
   sprite_size,
   goldCoin_source,
   silverCoin_source,
+  audioWin,
+  audioLose,
 } from "../Constants/Constants";
 import Map from "../Map/Map";
 import { tiles } from "../Map/index";
@@ -62,6 +64,7 @@ const initialState = {
   ],
   goldCounter: 0,
   lifeCounter: 3,
+  score: 0,
 };
 
 class Game extends Component {
@@ -147,6 +150,13 @@ class Game extends Component {
     if (tiles[cY][cX] > 4) {
       return false;
     }
+    if (tiles[cY][cX] === 4) {
+      this.setState({
+        lifeCounter: this.state.lifeCounter - 1,
+        score: this.state.score - 10,
+      });
+      audioLose.play();
+    }
     return true;
   };
 
@@ -167,7 +177,9 @@ class Game extends Component {
         this.setState({
           silverList: newSilverList,
           silverCounter: this.state.silverCounter + 1,
+          score: this.state.score + 50,
         });
+        audioWin.play();
       }
     }
   };
@@ -188,7 +200,9 @@ class Game extends Component {
         this.setState({
           goldList: newGoldList,
           goldCounter: this.state.goldCounter + 1,
+          score: this.state.score + 100,
         });
+        audioWin.play();
       }
     }
   };
@@ -197,12 +211,12 @@ class Game extends Component {
     return (
       <div>
         <div className="header-game">
-          <LifeCounter />
+          <LifeCounter lifeCounter={this.state.lifeCounter} />
           <StuffCounter
             silverCounter={this.state.silverCounter}
             goldCounter={this.state.goldCounter}
           />
-          <ScoreCounter />
+          <ScoreCounter scoreCount={this.state.score} />
         </div>
         <div className="game-area">
           <Map tiles={tiles} />
