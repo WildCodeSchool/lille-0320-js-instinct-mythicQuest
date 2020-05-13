@@ -27,21 +27,101 @@
   background-image: url("/game/map/stone1.png");
   background-repeat: no-repeat;
 }
+//////// WATER TILES///////////////
 .water {
-  background-image: url("/game/map/water1.jpg");
+  background-image: url("/game/map/water/water1.jpg");
+}
+.waterTL {
+  background-image: url("/game/map/water/waterTL.png");
+}
+.waterTR {
+  background-image: url("/game/map/water/waterTR.png");
+}
+.waterBR {
+  background-image: url("/game/map/water/waterBR.png");
+}
+.waterBL {
+  background-image: url("/game/map/water/waterBL.png");
+}
+.waterT {
+  background-image: url("/game/map/water/waterT.png");
+}
+.waterR {
+  background-image: url("/game/map/water/waterR.png");
+}
+.waterB {
+  background-image: url("/game/map/water/waterB.png");
+}
+.waterL {
+  background-image: url("/game/map/water/waterL.png");
+}
+///////// HOUSE TILES ////////////////////////
+.houseTL {
+  background-image: url("/game/map/hoodhouse/houseTL.png");
+}
+.houseTR {
+  background-image: url("/game/map/hoodhouse/houseTR.png");
+}
+.houseBR {
+  background-image: url("/game/map/hoodhouse/houseBR.png");
+}
+.houseBL {
+  background-image: url("/game/map/hoodhouse/houseBL.png");
+}
+.river-houseTL {
+  background-image: url("/game/map/riverhouse/riverhouseTL.png");
+}
+.river-houseTR {
+  background-image: url("/game/map/riverhouse/riverhouseTR.png");
+}
+.river-houseBR {
+  background-image: url("/game/map/riverhouse/riverhouseBR.png");
+}
+.river-houseBL {
+  background-image: url("/game/map/riverhouse/riverhouseBL.png");
+}
+.stoneTL {
+  background-image: url("/game/map/stone/stoneTL.png");
+}
+.stoneTR {
+  background-image: url("/game/map/stone/stoneTR.png");
+}
+.stoneBR {
+  background-image: url("/game/map/stone/stoneBR.png");
+}
+.stoneBL {
+  background-image: url("/game/map/stone/stoneBL.png");
+}
+.mushroom {
+  background-image: url("/game/map/mushroom.png");
+}
+.shipL {
+  background-image: url("/game/map/shipL.png");
+}
+.shipR {
+  background-image: url("/game/map/shipR.png");
 }
 
 .chest {
   background-image: url("/game/map/chest.png");
   background-repeat: no-repeat;
 }
-
-.road {
-  background-image: url("/game/map/road1.png");
+.bridge {
+  background-image: url("/game/map/bridge.png");
+}
+.souche1 {
+  background-image: url("/game/map/souche1.png");
+}
+.souche2 {
+  background-image: url("/game/map/souche2.png");
 }
 
-.house {
-  background-image: url("/game/map/house.png");
+.road {
+  background-image: url("/game/map/road1.jpg");
+}
+
+.fishing {
+  background-image: url("/game/map/fishing.png");
 }
 
 .sorry {
