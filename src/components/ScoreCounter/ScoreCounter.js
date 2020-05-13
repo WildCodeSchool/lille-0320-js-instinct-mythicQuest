@@ -1,9 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import "./ScoreCounter.scss";
 
-const ScoreCounter = () => {
-  const [scoreCount, setScoreCount] = useState(0);
-
+const ScoreCounter = ({ scoreCount }) => {
   return (
     <div className="scoreCounter">
       <p>Score : {scoreCount} </p>
