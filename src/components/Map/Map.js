@@ -42,8 +42,8 @@ const MapTile = (props) => {
 const MapRow = (props) => {
   return (
     <div className="row">
-      {props.tiles.map((tile) => (
-        <MapTile tile={tile} />
+      {props.tiles.map((tile, index) => (
+        <MapTile tile={tile} key={index} />
       ))}
     </div>
   );
@@ -52,8 +52,8 @@ const MapRow = (props) => {
 const Map = (props) => {
   return (
     <div className="map-area">
-      {props.tiles.map((row) => (
-        <MapRow tiles={row} />
+      {props.tiles.map((row, index) => (
+        <MapRow tiles={row} key={index} />
       ))}
     </div>
   );
