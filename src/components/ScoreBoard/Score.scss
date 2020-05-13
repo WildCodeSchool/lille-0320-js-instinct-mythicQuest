@@ -1,0 +1,29 @@
+.blocscore {
+  display: flex;
+  justify-content: center;
+  border-top: 1px solid rgba(142, 223, 55, 0.5);
+  padding: 15px 0;
+  font-family: "Montserrat", sans-serif;
+}
+
+.classement {
+  width: 15%;
+  font-weight: 900;
+  font-size: 1.3em;
+  margin-left: 10%;
+  //   background-color: yellow;
+}
+
+.nom {
+  width: 30%;
+  display: flex;
+  align-items: center;
+  //   background-color: blue;
+}
+
+.score {
+  width: 30%;
+  display: flex;
+  align-items: center;
+  //   background-color: pink;
+}

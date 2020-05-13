@@ -5,6 +5,9 @@ import Player from "../Player/Player";
 import { sprite_size } from "../Constants/Constants";
 import Map from "../Map/Map";
 import { tiles } from "../Map/index";
+import LifeCounter from "../LifeCounter/LifeCounter";
+import StuffCounter from "../StuffCounter/StuffCounter";
+import ScoreCounter from "../ScoreCounter/ScoreCounter";
 
 /* RANDOM POSITION FOR COINS */
 const getRandomY = () => {
@@ -135,7 +138,7 @@ class Game extends Component {
     return true;
   };
 
-  /* COINS */
+/* COINS */
   getCoins = () => {
     let xPlayer = cssToCoords(this.state.positionX);
     let yPlayer = cssToCoords(this.state.positionY);
@@ -157,7 +160,13 @@ class Game extends Component {
 
   render() {
     return (
-      <div className="game-area">
+      <div>
+        <div className="header-game">
+          <LifeCounter />
+          <StuffCounter />
+          <ScoreCounter />
+        </div>
+       <div className="game-area">
         <Map tiles={tiles} />
         {this.state.coinsList.map((coin, index) => {
           return (
@@ -174,7 +183,7 @@ class Game extends Component {
           positionY={this.state.positionY}
           direction={this.state.direction}
         />
-      </div>
+      </div>     
     );
   }
 }

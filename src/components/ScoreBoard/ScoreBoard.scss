@@ -1,0 +1,16 @@
+.scoreboard {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.scoreboard h2 {
+  color: #8edf37;
+  font-size: 1.7em;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  margin-bottom: 30px;
+  text-align: center;
+  text-transform: uppercase;
+}

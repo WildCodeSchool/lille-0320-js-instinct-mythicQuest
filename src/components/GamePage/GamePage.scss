@@ -6,35 +6,34 @@
   background-position: top center;
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-evenly;
 
   .Left-section {
     width: 300px;
-    height: 600px;
+    height: 650px;
+    background-color: black;
+    opacity: 70%;
     text-align: center;
     color: white;
 
-    .LifeCounter {
-      border: 1px solid rgb(157, 255, 77);
-      height: 200px;
-    }
-
-    .Stuff {
-      border: 1px solid rgb(255, 77, 246);
-      height: 200px;
+    img {
+      width: 80%;
+      margin: 30px 0;
     }
 
     .Divers {
-      border: 1px solid rgb(255, 193, 59);
-      height: 200px;
+      height: 400px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
   }
 
   .Right-section {
-    border: 1px solid yellow;
+    background-color: black;
+    opacity: 70%;
     width: 300px;
-    height: 600px;
+    height: 650px;
     color: white;
-    text-align: center;
   }
 }

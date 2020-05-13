@@ -1,0 +1,16 @@
+.coinsCounter {
+  width: 33%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Montserrat", sans-serif;
+  border-right: 1px solid #8edf37;
+  color: white;
+
+  .gold-container,
+  .silver-container {
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+  }
+}

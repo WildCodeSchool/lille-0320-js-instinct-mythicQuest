@@ -3,10 +3,10 @@ import "./Score.scss";
 
 const Score = ({ player, classement }) => {
   return (
-    <div className="player-container">
-      <p>{classement + 1}</p>
-      <p>{player.nom}</p>
-      <p>{player.score} Pts</p>
+    <div className="blocscore">
+      <div className="classement">{classement + 1}.</div>
+      <div className="nom">{player.nom}</div>
+      <div className="score">{player.score} Pts</div>
     </div>
   );
 };
