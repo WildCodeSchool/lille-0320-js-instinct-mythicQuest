@@ -6,6 +6,7 @@ import "./ScoreBoard.scss";
 const ScoreBoard = () => {
   const [bestPlayers, setBestPlayers] = useState([]);
   const [orderScores, setOrderScores] = useState([]);
+  const [error, setError] = useState("");
 
   useEffect(() => {
     getScores();
@@ -18,7 +19,10 @@ const ScoreBoard = () => {
   const getScores = () => {
     axios
       .get("http://localhost:5000/highscores")
-      .then((res) => setBestPlayers(res.data));
+      .then((res) => setBestPlayers(res.data))
+      .catch(() => {
+        setError("Coming soon");
+      });
   };
 
   const sortScores = () => {
@@ -29,16 +33,22 @@ const ScoreBoard = () => {
 
   return (
     <div className="scoreboard">
-      <h2 className="titlescore">Scoreboard</h2>
-      <div className="table">
-        {bestPlayers ? (
-          orderScores.map((player, index) => (
-            <Score key={index} classement={index} player={player} />
-          ))
-        ) : (
-          <p>loading</p>
-        )}
-      </div>
+      {error ? (
+        <h2>{error}</h2>
+      ) : (
+        <>
+          <h2 className="titlescore">Scoreboard</h2>
+          <div className="table">
+            {orderScores ? (
+              orderScores.map((player, index) => (
+                <Score key={index} classement={index} player={player} />
+              ))
+            ) : (
+              <p>Loading...</p>
+            )}
+          </div>
+        </>
+      )}
     </div>
   );
 };
