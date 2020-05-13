@@ -207,11 +207,19 @@ class Game extends Component {
     }
   };
 
+  /* Reset function */
+  resetGame = () => {
+    this.setState(initialState);
+  };
+
   render() {
     return (
       <div>
         <div className="header-game">
-          <LifeCounter lifeCounter={this.state.lifeCounter} />
+          <LifeCounter
+            lifeCounter={this.state.lifeCounter}
+            resetGame={this.resetGame}
+          />
           <StuffCounter
             silverCounter={this.state.silverCounter}
             goldCounter={this.state.goldCounter}
