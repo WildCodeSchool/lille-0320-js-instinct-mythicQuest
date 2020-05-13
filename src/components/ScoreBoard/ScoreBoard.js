@@ -31,7 +31,7 @@ const ScoreBoard = () => {
     <div className="scoreboard">
       <h2 className="titlescore">Scoreboard</h2>
       <div className="table">
-        {orderScores ? (
+        {bestPlayers ? (
           orderScores.map((player, index) => (
             <Score key={index} classement={index} player={player} />
           ))
