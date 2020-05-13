@@ -61,6 +61,7 @@ const initialState = {
     { x: 2 * 40, y: 0 * 40, source: goldCoin_source, display: "" },
     { x: 1 * 40, y: 12 * 40, source: goldCoin_source, display: "" },
     { x: 19 * 40, y: 13 * 40, source: goldCoin_source, display: "" },
+    { x: 9 * 40, y: 7 * 40, source: goldCoin_source, display: "" },
   ],
   goldCounter: 0,
   lifeCounter: 3,
@@ -147,7 +148,7 @@ class Game extends Component {
     }
     const cX = cssToCoords(x);
     const cY = cssToCoords(y);
-    if (tiles[cY][cX] > 4) {
+    if (tiles[cY][cX] > 5) {
       return false;
     }
     if (tiles[cY][cX] === 4) {
