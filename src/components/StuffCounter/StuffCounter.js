@@ -1,19 +1,17 @@
-import React, { useState } from "react";
+import React from "react";
 import "./StuffCounter.scss";
+import { goldCoin_source, silverCoin_source } from "../Constants/Constants";
 
-const StuffCounter = () => {
-  const [countGold, setCountGold] = useState(0);
-  const [countSilver, setCountSilver] = useState(0);
-
+const StuffCounter = ({ silverCounter, goldCounter }) => {
   return (
     <div className="coinsCounter">
       <div className="gold-container">
-        <img src="images/gold.gif" alt="gold coin" />
-        <p>X {countGold} </p>
+        <img src={goldCoin_source} alt="gold coin" />
+        <p>X {goldCounter} </p>
       </div>
       <div className="silver-container">
-        <img src="images/silver.gif" alt="silver coin" />
-        <p>X {countSilver} </p>
+        <img src={silverCoin_source} alt="silver coin" />
+        <p>X {silverCounter} </p>
       </div>
     </div>
   );

@@ -1,7 +1,7 @@
 import React from "react";
-import { coins_source, coins_size } from "../Constants/Constants";
+import { coins_size } from "../Constants/Constants";
 
-const Coins = ({ x, y, display }) => {
+const Coins = ({ x, y, display, source }) => {
   return (
     <div
       style={{
@@ -9,7 +9,7 @@ const Coins = ({ x, y, display }) => {
         position: "absolute",
         top: `${y}px`,
         left: `${x}px`,
-        backgroundImage: `url(${coins_source})`,
+        backgroundImage: `url(${source})`,
         backgroundPosition: `${coins_size * 4}px 0`,
         width: `${coins_size}px`,
         height: `${coins_size}px`,
