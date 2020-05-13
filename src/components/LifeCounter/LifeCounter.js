@@ -3,7 +3,7 @@ import Modal from "../Modal/Modal";
 import { audioGameOver } from "../Constants/Constants";
 import "./LifeCounter.scss";
 
-const LifeCounter = ({ lifeCounter }) => {
+const LifeCounter = ({ lifeCounter, resetGame }) => {
   const [openModal, setOpenModal] = useState(false);
 
   useEffect(() => {
@@ -11,14 +11,13 @@ const LifeCounter = ({ lifeCounter }) => {
       setTimeout(() => {
         audioGameOver.volume = 0.4;
         audioGameOver.play();
-        showModal();
+        setOpenModal(true);
       }, 400);
     }
+    if (lifeCounter === 3) {
+      setOpenModal(false);
+    }
   }, [lifeCounter]);
-
-  const showModal = () => {
-    setOpenModal(true);
-  };
 
   return (
     <>
@@ -41,7 +40,7 @@ const LifeCounter = ({ lifeCounter }) => {
           />
         </div>
       </div>
-      <Modal showModal={openModal} />
+      <Modal showModal={openModal} resetGame={resetGame} />
     </>
   );
 };
