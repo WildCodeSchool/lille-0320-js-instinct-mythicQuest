@@ -49,12 +49,19 @@ const initialState = {
   positionX: 0,
   positionY: 0,
   canMove: true,
-  coinsList: [
+  silverList: [
     { coords: getRandomCoords(), display: "" },
     { coords: getRandomCoords(), display: "" },
     { coords: getRandomCoords(), display: "" },
   ],
   silverCounter: 0,
+  goldList: [
+    { x: 2 * 40, y: 0 * 40, source: goldCoin_source, display: "" },
+    { x: 1 * 40, y: 12 * 40, source: goldCoin_source, display: "" },
+    { x: 19 * 40, y: 13 * 40, source: goldCoin_source, display: "" },
+  ],
+  goldCounter: 0,
+  lifeCounter: 3,
 };
 
 class Game extends Component {
@@ -70,6 +77,7 @@ class Game extends Component {
   componentDidUpdate() {
     if (this.state.canMove === true) {
       this.getSilverCoins();
+      this.getGoldCoins();
     }
   }
 
@@ -146,19 +154,40 @@ class Game extends Component {
   getSilverCoins = () => {
     let xPlayer = cssToCoords(this.state.positionX);
     let yPlayer = cssToCoords(this.state.positionY);
-    let newCoinsList = this.state.coinsList;
-    for (let i = 0; i < newCoinsList.length; i++) {
-      let newCoinsX = cssToCoords(newCoinsList[i].coords.x);
-      let newCoinsY = cssToCoords(newCoinsList[i].coords.y);
+    let newSilverList = this.state.silverList;
+    for (let i = 0; i < newSilverList.length; i++) {
+      let newCoinsX = cssToCoords(newSilverList[i].coords.x);
+      let newCoinsY = cssToCoords(newSilverList[i].coords.y);
       if (
         newCoinsX === xPlayer &&
         newCoinsY === yPlayer &&
-        newCoinsList[i].display !== "none"
+        newSilverList[i].display !== "none"
       ) {
-        newCoinsList[i].display = "none";
+        newSilverList[i].display = "none";
         this.setState({
-          coinsList: newCoinsList,
+          silverList: newSilverList,
           silverCounter: this.state.silverCounter + 1,
+        });
+      }
+    }
+  };
+
+  getGoldCoins = () => {
+    let xPlayer = cssToCoords(this.state.positionX);
+    let yPlayer = cssToCoords(this.state.positionY);
+    let newGoldList = this.state.goldList;
+    for (let i = 0; i < newGoldList.length; i++) {
+      let newCoinsX = cssToCoords(newGoldList[i].x);
+      let newCoinsY = cssToCoords(newGoldList[i].y);
+      if (
+        newCoinsX === xPlayer &&
+        newCoinsY === yPlayer &&
+        newGoldList[i].display !== "none"
+      ) {
+        newGoldList[i].display = "none";
+        this.setState({
+          goldList: newGoldList,
+          goldCounter: this.state.goldCounter + 1,
         });
       }
     }
@@ -169,18 +198,32 @@ class Game extends Component {
       <div>
         <div className="header-game">
           <LifeCounter />
-          <StuffCounter silverCounter={this.state.silverCounter} />
+          <StuffCounter
+            silverCounter={this.state.silverCounter}
+            goldCounter={this.state.goldCounter}
+          />
           <ScoreCounter />
         </div>
         <div className="game-area">
           <Map tiles={tiles} />
-          {this.state.coinsList.map((coin, index) => {
+          {this.state.silverList.map((coin, index) => {
             return (
               <Coins
                 x={coin.coords.x}
                 y={coin.coords.y}
                 display={coin.display}
                 source={silverCoin_source}
+                key={index}
+              />
+            );
+          })}
+          {this.state.goldList.map((coin, index) => {
+            return (
+              <Coins
+                x={coin.x}
+                y={coin.y}
+                display={coin.display}
+                source={goldCoin_source}
                 key={index}
               />
             );
