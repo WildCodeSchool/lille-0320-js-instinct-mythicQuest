@@ -138,7 +138,7 @@ class Game extends Component {
     return true;
   };
 
-/* COINS */
+  /* COINS */
   getCoins = () => {
     let xPlayer = cssToCoords(this.state.positionX);
     let yPlayer = cssToCoords(this.state.positionY);
@@ -168,24 +168,25 @@ class Game extends Component {
           <StuffCounter />
           <ScoreCounter />
         </div>
-       <div className="game-area">
-        <Map tiles={tiles} />
-        {this.state.coinsList.map((coin, index) => {
-          return (
-            <Coins
-              x={coin.coords.x}
-              y={coin.coords.y}
-              display={coin.display}
-              key={index}
-            />
-          );
-        })}
-        <Player
-          positionX={this.state.positionX}
-          positionY={this.state.positionY}
-          direction={this.state.direction}
-        />
-      </div>     
+        <div className="game-area">
+          <Map tiles={tiles} />
+          {this.state.coinsList.map((coin, index) => {
+            return (
+              <Coins
+                x={coin.coords.x}
+                y={coin.coords.y}
+                display={coin.display}
+                key={index}
+              />
+            );
+          })}
+          <Player
+            positionX={this.state.positionX}
+            positionY={this.state.positionY}
+            direction={this.state.direction}
+          />
+        </div>
+      </div>
     );
   }
 }
