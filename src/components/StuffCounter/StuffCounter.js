@@ -1,14 +1,12 @@
 import React, { useState } from "react";
 import "./StuffCounter.scss";
 
-const StuffCounter = ({ silverCounter }) => {
-  const [countGold, setCountGold] = useState(0);
-
+const StuffCounter = ({ silverCounter, goldCounter }) => {
   return (
     <div className="coinsCounter">
       <div className="gold-container">
         <img src="images/gold.gif" alt="gold coin" />
-        <p>X {countGold} </p>
+        <p>X {goldCounter} </p>
       </div>
       <div className="silver-container">
         <img src="images/silver.gif" alt="silver coin" />
