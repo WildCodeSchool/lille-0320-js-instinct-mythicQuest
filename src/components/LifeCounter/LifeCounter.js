@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Modal from "../Modal/Modal";
+import { audioGameOver } from "../Constants/Constants";
 import "./LifeCounter.scss";
 
 const LifeCounter = ({ lifeCounter }) => {
@@ -8,9 +9,8 @@ const LifeCounter = ({ lifeCounter }) => {
   useEffect(() => {
     if (lifeCounter === 0) {
       setTimeout(() => {
-        const audio = new Audio("sound/dundundun.mp3");
-        audio.volume = 0.4;
-        audio.play();
+        audioGameOver.volume = 0.4;
+        audioGameOver.play();
         showModal();
       }, 400);
     }

@@ -7,3 +7,4 @@ export const coins_size = 30;
 
 export const audioWin = new Audio("sound/win-life.wav");
 export const audioLose = new Audio("sound/lost-life.wav");
+export const audioGameOver = new Audio("sound/dundundun.mp3");
