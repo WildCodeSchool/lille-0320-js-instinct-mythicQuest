@@ -2,7 +2,11 @@ import React, { Component } from "react";
 import "./Game.scss";
 import Coins from "../Coins/Coins";
 import Player from "../Player/Player";
-import { sprite_size } from "../Constants/Constants";
+import {
+  sprite_size,
+  goldCoin_source,
+  silverCoin_source,
+} from "../Constants/Constants";
 import Map from "../Map/Map";
 import { tiles } from "../Map/index";
 import LifeCounter from "../LifeCounter/LifeCounter";
@@ -30,7 +34,7 @@ const getRandomCoords = () => {
     y = getRandomY();
     cX = cssToCoords(x);
     cY = cssToCoords(y);
-  } while (tiles[cY][cX] > 3);
+  } while (tiles[cY][cX] > 1);
   return { x, y };
 };
 
@@ -50,7 +54,7 @@ const initialState = {
     { coords: getRandomCoords(), display: "" },
     { coords: getRandomCoords(), display: "" },
   ],
-  coinsCounter: 0,
+  silverCounter: 0,
 };
 
 class Game extends Component {
@@ -65,7 +69,7 @@ class Game extends Component {
 
   componentDidUpdate() {
     if (this.state.canMove === true) {
-      this.getCoins();
+      this.getSilverCoins();
     }
   }
 
@@ -139,7 +143,7 @@ class Game extends Component {
   };
 
   /* COINS */
-  getCoins = () => {
+  getSilverCoins = () => {
     let xPlayer = cssToCoords(this.state.positionX);
     let yPlayer = cssToCoords(this.state.positionY);
     let newCoinsList = this.state.coinsList;
@@ -154,7 +158,7 @@ class Game extends Component {
         newCoinsList[i].display = "none";
         this.setState({
           coinsList: newCoinsList,
-          coinsCounter: this.state.coinsCounter + 1,
+          silverCounter: this.state.silverCounter + 1,
         });
       }
     }
@@ -165,7 +169,7 @@ class Game extends Component {
       <div>
         <div className="header-game">
           <LifeCounter />
-          <StuffCounter />
+          <StuffCounter silverCounter={this.state.silverCounter} />
           <ScoreCounter />
         </div>
         <div className="game-area">
@@ -176,6 +180,7 @@ class Game extends Component {
                 x={coin.coords.x}
                 y={coin.coords.y}
                 display={coin.display}
+                source={silverCoin_source}
                 key={index}
               />
             );
