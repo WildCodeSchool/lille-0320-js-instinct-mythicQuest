@@ -3,7 +3,7 @@ import "./Music.scss";
 
 export default function Music() {
   const [sound] = useState(new Audio("sound/gamesound.ogg"));
-  const [playing, setPlaying] = useState(false);
+  const [playing, setPlaying] = useState(true);
 
   const toggle = () => setPlaying(!playing);
 
