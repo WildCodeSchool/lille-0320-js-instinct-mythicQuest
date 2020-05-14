@@ -9,8 +9,8 @@ const HowToPlay = () => {
         <div className="left-section">
           <iframe
             title="Tutorial video to learn how to play"
-            width="650"
-            height="550"
+            width="500"
+            height="350"
             src="../video/MythicQuest.mp4"
             allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
           ></iframe>
