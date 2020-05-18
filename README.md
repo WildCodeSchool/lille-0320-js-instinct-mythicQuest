@@ -22,4 +22,4 @@ The roles of scrum master and product owner were taken on by a different team me
 
 ## Production (on Netlify)
 
-You can play [here] (Link coming soon)
+You can play : https://mythic-quest.netlify.app/
